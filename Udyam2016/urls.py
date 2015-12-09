@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from Udyam.views import *
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', view=index, name='home'),
+    url(r'^(?P<event>[\w\-]+)/register$', view=register, name='register'),
+    url(r'^(?P<event>[\w\-]+)$', view=events, name="events")
 ]
