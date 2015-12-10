@@ -6,6 +6,9 @@ from django.utils import timezone
 # Create your views here.
 
 
+def check_mail(data):
+    pass
+
 def index(request):
     pass
 
@@ -19,10 +22,9 @@ def register(request, name):
             model_instance.save()
             # TODO return success page
             # TODO check for the repeated email entry
-    else:
-        form = RegistrationForm()
-        event = Events.objects.get(name=name)
-    # TODO return registration form page
+    form = RegistrationForm()
+    event = Events.objects.get(name=name)
+    render(request, 'register.html', {'form':form})
 
 
 def events(request, name):
