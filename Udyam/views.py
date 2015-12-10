@@ -7,7 +7,10 @@ from django.utils import timezone
 
 
 def check_mail(data):
-    pass
+    temp = dict()
+    for entry in data:
+        
+
 
 def index(request):
     pass
@@ -16,7 +19,7 @@ def index(request):
 def register(request, name):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        if form.isvalid():
+        if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.timestamp = timezone.now()
             model_instance.save()
@@ -24,7 +27,7 @@ def register(request, name):
             # TODO check for the repeated email entry
     form = RegistrationForm()
     event = Events.objects.get(name=name)
-    render(request, 'register.html', {'form':form})
+    return render(request, 'register.html', {'form':form})
 
 
 def events(request, name):
