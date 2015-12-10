@@ -4,5 +4,5 @@ from models import Team
 
 class RegistrationForm(forms.ModelForm):
     class Meta:
-        model = Team()
+        model = Team
         fields = '__all__'
