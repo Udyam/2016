@@ -8,10 +8,25 @@ Team registration UDYAM-2016
     <form method="post" id="register_form">
         {% csrf_token %}
         <label>
-            Team Name: <input type="text" name="team_name"> <br>
+             Event :
+             <select>
+                 <option value="code42day">CODE-4-2-DAY</option>
+                 <option value="codedef">CODEDEF</option>
+                 <option value="continnum">CONTINNUM</option>
+                 <option value="commnet">COMMNET</option>
+                 <option value="digisim">DIGISIM</option>
+                 <option value="embedtron">EMBEDTRON</option>
+                 <option value="funckit">FUNCKIT</option>
+                 <option value="ichip">I-CHIP</option>
+                 <option value="ignite">IGNITE</option>
+                 <option value="krypto">KRYPTO</option>
+                 <option value="mosaic">MOSIAC</option>
+                 <option value="muse">MUSE</option>
+             </select>
         </label>
+        <br>
         <label>
-            <input type="hidden" name="team_name" value="{{ event.name }}">
+            Team Name: <input type="text" name="team_name"> <br>
         </label>
         <fieldset>
             <legend>Team Representative:</legend>
@@ -25,10 +40,10 @@ Team registration UDYAM-2016
                 Email address: <input type="email" name="member1_email"> <br>
             </label>
         </fieldset>
-        <input type="button" onclick="add_member()">
+        <input type="button" value="Add Member" onclick="add_member()">
         <input type="button" value="submit">
     </form>
-    <script language="JavaScript">
+    <script>
         var max_members = 5;
         var counter = 1;
         function add_member(){
