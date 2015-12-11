@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse
-from forms import RegistrationForm
 from models import Events
 from django.utils import timezone
 
@@ -18,7 +17,7 @@ def register(request, name):
         # TODO return success page
         # TODO check for the repeated email entry
     event = Events.objects.get(name=name)
-    return render(request, 'register.html', {'form':form, 'event':event})
+    return render(request, 'register.html', {'event':event})
 
 
 def events(request, name):

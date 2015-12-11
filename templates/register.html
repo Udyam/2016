@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Team registration UDYAM-2016
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <label>
+            Team Name: <input type="text" name="team_name"> <br>
+        </label>
+        <label>
+            <input type="hidden" name="team_name" value="{{ event.name }}">
+        </label>
+        <fieldset>
+            <legend>Team Representative:</legend>
+            <label>
+                Name: <input type="text" name="member1_name"> <br>
+            </label>
+            <label>
+                Contact Number: <input type="text" name="member1_contact"> <br>
+            </label>
+            <label>
+                Email address: <input type="email" name="member1_email"> <br>
+            </label>
+        </fieldset>
+    </form>
+{% endblock %}
