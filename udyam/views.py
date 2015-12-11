@@ -1,13 +1,11 @@
 from django.shortcuts import render, HttpResponse
-from models import Events
 from django.utils import timezone
 
 # Create your views here.
 
 
 def index(request):
-    pass
-
+    return HttpResponse("Hello, world!")
 
 def register(request, name):
     if request.method == 'POST':
@@ -16,9 +14,7 @@ def register(request, name):
         # request.POST['event_name'] = name
         # TODO return success page
         # TODO check for the repeated email entry
-    event = Events.objects.get(name=name)
     return render(request, 'register.html', {'event':event})
-
 
 def events(request, name):
     pass
