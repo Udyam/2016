@@ -40,8 +40,11 @@ Team registration UDYAM-2016
                 Email address: <input type="email" name="member1_email"> <br>
             </label>
         </fieldset>
-        <input type="button" value="Add Member" onclick="add_member()">
-        <input type="button" value="submit">
+        <button type="button" class="btn btn-default btn-sm" onclick="add_member()">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </button>
+        <br>
+        <input type="button" class="btn btn-info" value="submit">
     </form>
     <script>
         var max_members = 5;
@@ -53,9 +56,12 @@ Team registration UDYAM-2016
                 alert("Maximum" + max_members + "number of allowed members in a team");
             }
             else{
+                if(id_number==2){
+                    var text1 = "<legend id = 'legend'> Team Memebers:</legend>"
+                    $("#tr_field").after(text1);
+                }
                 counter++;
                 var text =  '<fieldset id="m'+id_number+'_field"> \
-                                <legend>Team Member:</legend> \
                                 <label> \
                                     Name: <input type="text" name="member'+id_number+'_name"> <br> \
                                 </label> \
@@ -65,9 +71,13 @@ Team registration UDYAM-2016
                                 <label> \
                                     Email address: <input type="email" name="member'+id_number +'_email"> <br> \
                                 </label> \
-                                <input type="button" value="Remove Member" onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
+                                <button type="button" class="btn btn-default btn-sm" \
+                                    onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
+                                    <span class="glyphicon glyphicon-minus-sign"></span>\
+                                    </button>\
                             </fieldset>';
-                $("#tr_field").after(text);
+                $("#legend").after(text);
+                id_number++;
             }
         }
         function remove_member(tag){
