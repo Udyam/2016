@@ -7,7 +7,7 @@ Team registration UDYAM-2016
 {% block body %}
     <form method="post" id="register_form">
         {% csrf_token %}
-        <label>
+        <label id="event_label">
              Event :
              <select>
                  <option value="code42day">CODE-4-2-DAY</option>
@@ -25,10 +25,10 @@ Team registration UDYAM-2016
              </select>
         </label>
         <br>
-        <label>
+        <label id = "team_lable">
             Team Name: <input type="text" name="team_name"> <br>
         </label>
-        <fieldset>
+        <fieldset id="tr_field">
             <legend>Team Representative:</legend>
             <label>
                 Name: <input type="text" name="member1_name"> <br>
@@ -45,6 +45,7 @@ Team registration UDYAM-2016
     </form>
     <script>
         var max_members = 5;
+        var id_number = 2;
         var counter = 1;
         function add_member(){
             //dynamically adds a member to the team
@@ -53,20 +54,25 @@ Team registration UDYAM-2016
             }
             else{
                 counter++;
-                var new_field = document.createElement('fieldset');
-                var new_legend = document.createElement('legend');
-                new_legend.appendChild(document.createTextNode("Team member"+ (counter - 1)));
-                new_field.appendChild(new_legend);
-                var new_label = document.createElement('label');
-                new_label.innerHTML = "Name: " + "<input type='text' name='member'+counter+'name'> <br>";
-                new_field.appendChild(new_label);
-                new_label.innerHTML = "Contact Number: " + "<input type='text' name='member'+counter+'contact'> <br>";
-                new_field.appendChild(new_label);
-                new_label.innerHTML = "Email address: " + "<input type='text' name='member'+counter+'email'> <br>";
-                new_field.appendChild(new_label);
-                var container = document.getElementById('register_form');
-                container.appendChild(new_field)
+                var text =  '<fieldset id="m'+id_number+'_field"> \
+                                <legend>Team Member:</legend> \
+                                <label> \
+                                    Name: <input type="text" name="member'+id_number+'_name"> <br> \
+                                </label> \
+                                <label> \
+                                    Contact Number: <input type="text" name="member'+id_number+'_contact"> <br> \
+                                </label> \
+                                <label> \
+                                    Email address: <input type="email" name="member'+id_number +'_email"> <br> \
+                                </label> \
+                                <input type="button" value="Remove Member" onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
+                            </fieldset>';
+                $("#tr_field").after(text);
             }
+        }
+        function remove_member(tag){
+            $('#'+tag).remove()
+            counter--;
         }
     </script>
 {% endblock %}
