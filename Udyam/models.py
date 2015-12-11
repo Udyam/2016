@@ -1,10 +1,48 @@
 from django.db import models
 from django.utils.encoding import smart_unicode
+import json
+from django.core.serializers.json import DjangoJSONEncoder
 from django.core.validators import RegexValidator
 
 # Create your models here.
 
 tenDigitContact = RegexValidator(r'^\d{10,10}$')
+
+
+class JSONField(models.TextField):
+    """
+    JSONField is a generic textfield that neatly serializes/unserializes
+    JSON objects seamlessly.
+    Django snippet #1478
+
+    example:
+        class Page(models.Model):
+            data = JSONField(blank=True, null=True)
+
+
+        page = Page.objects.get(pk=5)
+        page.data = {'title': 'test', 'type': 3}
+        page.save()
+    """
+    __metaclass__ = models.SubfieldBase
+
+    def to_python(self, value):
+        if value == "":
+            return None
+
+        try:
+            if isinstance(value, basestring):
+                return json.loads(value)
+        except ValueError:
+            pass
+        return value
+
+    def get_db_prep_save(self, value, *args, **kwargs):
+        if value == "":
+            return None
+        if isinstance(value, dict):
+            value = json.dumps(value, cls=DjangoJSONEncoder)
+        return super(JSONField, self).get_db_prep_save(value, *args, **kwargs)
 
 
 class Events(models.Model):
@@ -21,18 +59,8 @@ class Events(models.Model):
 
 
 # TODO changes can be done, not yet final, error messages to be added
-class Team(models.Model):
+class RegistrationInfo(models.Model):
     event_name = models.ForeignKey(Events)
     team_name = models.CharField(max_length=50, blank=False, null=False, unique=True)
-    name1 = models.CharField(max_length=60, blank=False, null=False)
-    email1 = models.EmailField(max_length=100, blank=False, null=False)
-    contact1 = models.IntegerField(blank=False, null=False, validators=[tenDigitContact])
-    name2 = models.CharField(max_length=60, blank=False, null=False)
-    email2 = models.EmailField(max_length=100, blank=False, null=False)
-    contact2 = models.IntegerField(blank=False, null=False, validators=[tenDigitContact])
-    name3 = models.CharField(max_length=60, blank=False, null=False)
-    email3 = models.EmailField(max_length=100, blank=False, null=False)
-    contact3 = models.IntegerField(blank=False, null=False, validators=[tenDigitContact])
-    name4 = models.CharField(max_length=60, blank=False, null=False)
-    email4 = models.EmailField(max_length=100, blank=False, null=False)
-    contact4 = models.IntegerField(blank=False, null=False, validators=[tenDigitContact])
+    contact = models.IntegerField(blank=False, null=False, validators=[tenDigitContact])
+    team_detail = JSONField(blank=False, null=False)
