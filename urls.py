@@ -12,6 +12,5 @@ from udyam.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', view=index, name='home'),
-    url(r'^register$', view=register, name='register'),
     url(r'^(?P<name>[\w\-]+)$', view=events, name="events")
 ]

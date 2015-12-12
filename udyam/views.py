@@ -5,16 +5,10 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'home.html')
-
-def register(request):
     if request.method == 'POST':
         pass
-        # request.POST = request.POST.copy()
-        # request.POST['event_name'] = name
-        # TODO return success page
-        # TODO check for the repeated email entry
-    return render(request, 'register.html')
+    return render(request, 'home.html')
+
 
 def events(request, name):
     pass
