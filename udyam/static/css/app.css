@@ -23,7 +23,3 @@ body {
 .modal-wide .modal-body {
   overflow-y: auto;
 }
-
-.modal-body fieldset{
-  max-width: 100%;
-}

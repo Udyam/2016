@@ -41,12 +41,12 @@
           <div class="modal-body">
             <div class="container">
                 <div class="col col-md-10">
-                  <form class="form-horizontal" method="post" id="register_form">
+                  <form class="form-horizontal" method="post" id="register_form" >
                       {% csrf_token %}
                       <div class="form-group">
                           <label id="event_label" class="control-label col-xs-2">Event :</label>
                           <div class="col-xs-6">
-                              <select class="form-control">
+                              <select class="form-control" name="event_name">
                                   <option value="code42day">CODE-4-2-DAY</option>
                                   <option value="codedef">CODEDEF</option>
                                   <option value="continnum">CONTINNUM</option>
@@ -70,29 +70,26 @@
                       </div>
                       <div class="form-group">
                           <fieldset id="tr_field">
-                              <div class="container">
-                                  <legend>Team Representative:</legend>
-                              </div>
+                              <legend style="text-align: center;">Team Representative:</legend>
                               <label>
                                   Name: <input type="text" name="member1_name">
-                              </label>
+                              </label>&emsp;&emsp;
                               <label>
                                   Contact Number: <input type="text" name="member1_contact">
-                              </label>
+                              </label>&emsp;&emsp;
                               <label>
                                   Email: <input type="email" name="member1_email">
                               </label>
                           </fieldset>
                       </div>
                           <br>
-                          <br>
                       <div class="form-group" id="members_div">
                           <legend id = 'legend'>
                               <div class="container">
-                                  <div class="col-md-8 align-center">
+                                  <div class="col-md-10 align-center">
                                       <p style="text-align: center;"> Team Members:</p>
                                   </div>
-                                  <div class="col-md-4">
+                                  <div class="col-md-2">
                                       <div class="form-group">
                                           <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
                                               <span class="glyphicon glyphicon-plus-sign"></span>
@@ -135,13 +132,13 @@
             var text =  '<fieldset id="m'+id_number+'_field"> \
                             <label> \
                                 Name: <input type="text" name="member_name">\
-                            </label> \
+                            </label>&emsp;&emsp; \
                             <label> \
                                 Contact Number: <input type="text" name="member_contact"> \
-                            </label> \
+                            </label>&emsp;&emsp; \
                             <label> \
                                 Email: <input type="email" name="member_email">\
-                            </label> \
+                            </label>&emsp;&emsp; \
                             <button type="button" class="btn btn-default btn-sm btn-warning" \
                                 onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
                                 <span class="glyphicon glyphicon-minus-sign"></span>\
@@ -152,9 +149,9 @@
         }
     }
     function remove_member(tag){
-        $('#'+tag).remove();
-        counter--;
-    }
+            $('#'+tag).remove();
+            counter--;
+        }
   </script>
 </body>
 </html>
