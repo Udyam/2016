@@ -19,14 +19,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">UYDAM 2016</a>
+        <a class="navbar-brand" href="/">UYDAM 2016</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
             <li><a class="btn" data-target="#register_modal" data-toggle="modal">Register</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -36,51 +36,62 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
          <h3 id="myModalLabel">Team Registration</h3>
     </div>
-      <form method="post" id="register_form">
-          <div class="modal-body">
-            {% csrf_token %}
-            <label id="event_label">
-                Event :
-                <select>
-                     <option value="code42day">CODE-4-2-DAY</option>
-                     <option value="codedef">CODEDEF</option>
-                     <option value="continnum">CONTINNUM</option>
-                     <option value="commnet">COMMNET</option>
-                     <option value="digisim">DIGISIM</option>
-                     <option value="embedtron">EMBEDTRON</option>
-                     <option value="funckit">FUNCKIT</option>
-                     <option value="ichip">I-CHIP</option>
-                     <option value="ignite">IGNITE</option>
-                     <option value="krypto">KRYPTO</option>
-                     <option value="mosaic">MOSIAC</option>
-                     <option value="muse">MUSE</option>
-                </select>
-            </label>
-            <br>
-            <label id = "team_lable">
-                Team Name: <input type="text" name="team_name"> <br>
-            </label>
-            <fieldset id="tr_field">
-                <legend>Team Representative:</legend>
-                <label>
-                    Name: <input type="text" name="member1_name"> <br>
-                </label>
-                <label>
-                    Contact Number: <input type="text" name="member1_contact"> <br>
-                </label>
-                <label>
-                    Email address: <input type="email" name="member1_email"> <br>
-                </label>
-            </fieldset>
-            <button type="button" class="btn btn-default btn-sm" onclick="add_member()">
-                <span class="glyphicon glyphicon-plus-sign"></span>
-            </button>
-            <br>
+      <div class="container">
+          <div class="col col-md-12">
+            <form class="form-horizontal" method="post" id="register_form">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label id="event_label" class="control-label col-xs-2">Event :</label>
+                        <div class="col-xs-6">
+                            <select class="form-control">
+                                <option value="code42day">CODE-4-2-DAY</option>
+                                <option value="codedef">CODEDEF</option>
+                                <option value="continnum">CONTINNUM</option>
+                                <option value="commnet">COMMNET</option>
+                                <option value="digisim">DIGISIM</option>
+                                <option value="embedtron">EMBEDTRON</option>
+                                <option value="funckit">FUNCKIT</option>
+                                <option value="ichip">I-CHIP</option>
+                                <option value="ignite">IGNITE</option>
+                                <option value="krypto">KRYPTO</option>
+                                <option value="mosaic">MOSIAC</option>
+                                <option value="muse">MUSE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label id="team_lable" class="control-label col-xs-2">Team Name:</label>
+                        <div class="col-xs-6">
+                            <input type="text" name="team_name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <fieldset id="tr_field">
+                            <legend>Team Representative:</legend>
+                            <label>
+                                Name: <input type="text" name="member1_name"> <br>
+                            </label>
+                            <label>
+                                Contact Number: <input type="text" name="member1_contact"> <br>
+                            </label>
+                            <label>
+                                Email address: <input type="email" name="member1_email"> <br>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-default btn-sm" onclick="add_member()">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Register</button>
+                </div>
+            </form>
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary">Register</button>
-          </div>
-      </form>
+      </div>
   </div>
   {% block body %}
   {% endblock %}
