@@ -46,7 +46,7 @@
                       <div class="form-group">
                           <label id="event_label" class="control-label col-xs-2">Event :</label>
                           <div class="col-xs-6">
-                              <select class="form-control">
+                              <select class="form-control" id="event_name" >
                                   <option value="code42day">CODE-4-2-DAY</option>
                                   <option value="codedef">CODEDEF</option>
                                   <option value="continnum">CONTINNUM</option>
@@ -134,13 +134,13 @@
             counter++;
             var text =  '<fieldset id="m'+id_number+'_field"> \
                             <label> \
-                                Name: <input type="text" name="member_name">\
+                                Name: <input type="text" name="member'+id_number+'_name">\
                             </label> \
                             <label> \
-                                Contact Number: <input type="text" name="member_contact"> \
+                                Contact Number: <input type="text" name="member'+id_number+'contact"> \
                             </label> \
                             <label> \
-                                Email: <input type="email" name="member_email">\
+                                Email: <input type="email" name="member'+id_number+'_email">\
                             </label> \
                             <button type="button" class="btn btn-default btn-sm btn-warning" \
                                 onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
@@ -155,6 +155,38 @@
         $('#'+tag).remove();
         counter--;
     }
+
+    $('#register_form').submit(function(){
+      var registrationData = {
+        'event': $('#event_name option:selected').text(),
+        'team_name': $('input[name=team_name]').val(),
+        'main_contact': {
+            'name': $('input[name=member1_name]').val(),
+            'contact': $('input[name=member1_contact]').val(),
+            'email': $('input[name=member1_email]').val()
+        },
+        'team_details': [],
+      };
+
+      var i = 0;
+      while(i<5) {
+        registrationData.team_details.push({
+          'name': $('input[name=member'+i+'_name]').val(),
+          'contact': $('input[name=member'+i+'_contact]').val(),
+          'email': $('input[name=member'+i+'_email]').val()
+        });
+        i++;
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: '/register',
+        data: registrationData,
+        dataType: 'json',
+      }).done(function(data) {
+        console.log(data);
+      });
+    });
   </script>
 </body>
 </html>
