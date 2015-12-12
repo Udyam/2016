@@ -31,11 +31,11 @@
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-  <div class="modal fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal modal-wide fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                <h3 id="myModalLabel">Team Registration</h3>
           </div>
           <div class="modal-body">
@@ -72,13 +72,13 @@
                           <fieldset id="tr_field">
                               <legend>Team Representative:</legend>
                               <label>
-                                  Name: <input type="text" name="member1_name"> <br>
+                                  Name: <input type="text" name="member1_name">
                               </label>
                               <label>
-                                  Contact Number: <input type="text" name="member1_contact"> <br>
+                                  Contact Number: <input type="text" name="member1_contact">
                               </label>
                               <label>
-                                  Email address: <input type="email" name="member1_email"> <br>
+                                  Email: <input type="email" name="member1_email">
                               </label>
                           </fieldset>
                       </div>
@@ -117,19 +117,19 @@
         }
         else{
             if(id_number==2){
-                var text1 = "<legend id = 'legend'> Team Memebers:</legend>";
+                var text1 = "<legend id = 'legend'> Team Members:</legend>";
                 $("#tr_field").after(text1);
             }
             counter++;
             var text =  '<fieldset id="m'+id_number+'_field"> \
                             <label> \
-                                Name: <input type="text" name="member'+id_number+'_name"> <br> \
+                                Name: <input type="text" name="member'+id_number+'_name">\
                             </label> \
                             <label> \
-                                Contact Number: <input type="text" name="member'+id_number+'_contact"> <br> \
+                                Contact Number: <input type="text" name="member'+id_number+'_contact"> \
                             </label> \
                             <label> \
-                                Email address: <input type="email" name="member'+id_number +'_email"> <br> \
+                                Email: <input type="email" name="member'+id_number +'_email">\
                             </label> \
                             <button type="button" class="btn btn-default btn-sm" \
                                 onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
