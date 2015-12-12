@@ -26,10 +26,62 @@
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+            <li><a class="btn" data-target="#register_modal" data-toggle="modal">Register</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
-    </nav>
+  </nav>
+  <div class="modal fade hide" id="register_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+         <h3 id="myModalLabel">Team Registration</h3>
+    </div>
+      <form method="post" id="register_form">
+          <div class="modal-body">
+            {% csrf_token %}
+            <label id="event_label">
+                Event :
+                <select>
+                     <option value="code42day">CODE-4-2-DAY</option>
+                     <option value="codedef">CODEDEF</option>
+                     <option value="continnum">CONTINNUM</option>
+                     <option value="commnet">COMMNET</option>
+                     <option value="digisim">DIGISIM</option>
+                     <option value="embedtron">EMBEDTRON</option>
+                     <option value="funckit">FUNCKIT</option>
+                     <option value="ichip">I-CHIP</option>
+                     <option value="ignite">IGNITE</option>
+                     <option value="krypto">KRYPTO</option>
+                     <option value="mosaic">MOSIAC</option>
+                     <option value="muse">MUSE</option>
+                </select>
+            </label>
+            <br>
+            <label id = "team_lable">
+                Team Name: <input type="text" name="team_name"> <br>
+            </label>
+            <fieldset id="tr_field">
+                <legend>Team Representative:</legend>
+                <label>
+                    Name: <input type="text" name="member1_name"> <br>
+                </label>
+                <label>
+                    Contact Number: <input type="text" name="member1_contact"> <br>
+                </label>
+                <label>
+                    Email address: <input type="email" name="member1_email"> <br>
+                </label>
+            </fieldset>
+            <button type="button" class="btn btn-default btn-sm" onclick="add_member()">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+            </button>
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary">Register</button>
+          </div>
+      </form>
+  </div>
   {% block body %}
   {% endblock %}
   <footer class="footer">
@@ -39,5 +91,44 @@
   </footer>
   <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script>
+    var max_members = 5;
+    var id_number = 2;
+    var counter = 1;
+    function add_member(){
+        //dynamically adds a member to the team
+        if(counter >= max_members){
+            alert("Maximum" + max_members + "number of allowed members in a team");
+        }
+        else{
+            if(id_number==2){
+                var text1 = "<legend id = 'legend'> Team Memebers:</legend>";
+                $("#tr_field").after(text1);
+            }
+            counter++;
+            var text =  '<fieldset id="m'+id_number+'_field"> \
+                            <label> \
+                                Name: <input type="text" name="member'+id_number+'_name"> <br> \
+                            </label> \
+                            <label> \
+                                Contact Number: <input type="text" name="member'+id_number+'_contact"> <br> \
+                            </label> \
+                            <label> \
+                                Email address: <input type="email" name="member'+id_number +'_email"> <br> \
+                            </label> \
+                            <button type="button" class="btn btn-default btn-sm" \
+                                onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
+                                <span class="glyphicon glyphicon-minus-sign"></span>\
+                                </button>\
+                        </fieldset>';
+            $("#legend").after(text);
+            id_number++;
+        }
+    }
+    function remove_member(tag){
+        $('#'+tag).remove();
+        counter--;
+    }
+  </script>
 </body>
 </html>
