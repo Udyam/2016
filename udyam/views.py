@@ -1,12 +1,14 @@
 from django.shortcuts import render, render_to_response, HttpResponse
-from django.utils import timezone
+import json
+from models import RegistrationInfo
 
 # Create your views here.
 
 
 def index(request):
     if request.method == 'POST':
-        pass
+        form_detail = json.loads(request.body)
+        print form_detail
     return render(request, 'home.html')
 
 
