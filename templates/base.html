@@ -137,16 +137,45 @@
     function remove_member(tag){
         $('#'+tag).remove();
         $("fieldset").each(function(index, element) {
+            $(this).attr("id", "m" +(index+1)+"_field");
             $child = $(this).children('input');
-            $child[0].attr("name", "member"+(index+1)+"_name");
-            $child[1].attr("name", "member"+(index+1)+"_contact");
-            $child[2].attr("name", "member"+(index+1)+"_email");
-            $(this).children("button")[0].attr("onclick","remove_member('m"+(index+1)+"_field')");
+            $child.eq(0).attr("name", "member"+(index+1)+"_name");
+            $child.eq(1).attr("name", "member"+(index+1)+"_contact");
+            $child.eq(2).attr("name", "member"+(index+1)+"_email");
+            $(this).children("button").eq(0).attr("onclick","remove_member('m"+(index+1)+"_field')");
         });
         counter--;
     }
 
-
+    $('#register_form').submit(function(){
+      var registrationData = {
+        'event': $('#event_name option:selected').text(),
+        'team_name': $('input[name=team_name]').val(),
+        'main_contact': {
+            'name': $('input[name=member1_name]').val(),
+            'contact': $('input[name=member1_contact]').val(),
+            'email': $('input[name=member1_email]').val()
+        },
+        'team_details': [],
+      };
+      var i = 1;
+      while(i<=5) {
+        registrationData.team_details.push({
+          'name': $('input[name=member'+i+'_name]').val(),
+          'contact': $('input[name=member'+i+'_contact]').val(),
+          'email': $('input[name=member'+i+'_email]').val()
+        });
+        i++;
+      }
+      $.ajax({
+        type: 'POST',
+        url: '/register',
+        data: registrationData,
+        dataType: 'json',
+      }).done(function(data) {
+        console.log(data);
+      });
+    });
   </script>
 </body>
 </html>
