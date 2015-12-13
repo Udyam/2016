@@ -71,15 +71,9 @@
                       <div class="form-group">
                           <fieldset id="tr_field">
                               <legend style="text-align: center;">Team Representative:</legend>
-                              <label>
-                                  Name: <input type="text" name="member1_name">
-                              </label>&emsp;&emsp;
-                              <label>
-                                  Contact Number: <input type="text" name="member1_contact">
-                              </label>&emsp;&emsp;
-                              <label>
-                                  Email: <input type="email" name="member1_email">
-                              </label>
+                              Name: <input type="text" name="member1_name">&emsp;&emsp;
+                              Contact Number: <input type="text" name="member1_contact">&emsp;&emsp;
+                              Email: <input type="email" name="member1_email">&emsp;&emsp;
                           </fieldset>
                       </div>
                           <br>
@@ -120,7 +114,6 @@
   <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
   <script>
     var max_members = 5;
-    var id_number = 2;
     var counter = 1;
     function add_member(){
         //dynamically adds a member to the team
@@ -129,61 +122,31 @@
         }
         else{
             counter++;
-            var text =  '<fieldset id="m'+id_number+'_field"> \
-                            <label> \
-                                Name: <input type="text" name="member'+id_number+'_name">\
-                            </label> \
-                            <label> \
-                                Contact Number: <input type="text" name="member'+id_number+'contact"> \
-                            </label> \
-                            <label> \
-                                Email: <input type="email" name="member'+id_number+'_email">\
-                            </label> \
+            var text =  '<fieldset id="m'+counter+'_field"> \
+                            Name: <input type="text" name="member'+counter+'_name">&emsp;&emsp;\
+                            Contact Number: <input type="text" name="member'+counter+'_contact">&emsp;&emsp; \
+                            Email: <input type="email" name="member'+counter+'_email">&emsp;&emsp;\
                             <button type="button" class="btn btn-default btn-sm btn-warning" \
-                                onclick="remove_member(' + "'m"+id_number+"_field'"+')"> \
+                                onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
                                 <span class="glyphicon glyphicon-minus-sign"></span>\
-                                </button>\
+                            </button>\
                         </fieldset>';
             $("#members_div").append(text);
-            id_number++;
         }
     }
     function remove_member(tag){
         $('#'+tag).remove();
-          counter--;
+        $("fieldset").each(function(index, element) {
+            $child = $(this).children('input');
+            $child[0].attr("name", "member"+(index+1)+"_name");
+            $child[1].attr("name", "member"+(index+1)+"_contact");
+            $child[2].attr("name", "member"+(index+1)+"_email");
+            $(this).children("button")[0].attr("onclick","remove_member('m"+(index+1)+"_field')");
+        });
+        counter--;
     }
 
-    $('#register_form').submit(function(){
-      var registrationData = {
-        'event': $('#event_name option:selected').text(),
-        'team_name': $('input[name=team_name]').val(),
-        'main_contact': {
-            'name': $('input[name=member1_name]').val(),
-            'contact': $('input[name=member1_contact]').val(),
-            'email': $('input[name=member1_email]').val()
-        },
-        'team_details': [],
-      };
 
-      var i = 0;
-      while(i<5) {
-        registrationData.team_details.push({
-          'name': $('input[name=member'+i+'_name]').val(),
-          'contact': $('input[name=member'+i+'_contact]').val(),
-          'email': $('input[name=member'+i+'_email]').val()
-        });
-        i++;
-      }
-
-      $.ajax({
-        type: 'POST',
-        url: '/register',
-        data: registrationData,
-        dataType: 'json',
-      }).done(function(data) {
-        console.log(data);
-      });
-    });
   </script>
 </body>
 </html>
