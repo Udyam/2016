@@ -65,15 +65,15 @@
                       <div class="form-group">
                           <label id="team_lable" class="control-label col-xs-2">Team Name:</label>
                           <div class="col-xs-6">
-                              <input type="text" name="team_name" class="form-control">
+                              <input type="text" name="team_name" class="form-control" required>
                           </div>
                       </div>
                       <div class="form-group">
                           <fieldset id="tr_field">
                               <legend style="text-align: center;">Team Representative:</legend>
-                              Name: <input type="text" name="member1_name">&emsp;&emsp;
-                              Contact Number: <input type="text" name="member1_contact">&emsp;&emsp;
-                              Email: <input type="email" name="member1_email">&emsp;&emsp;
+                              Name: <input type="text" name="member1_name" required>&emsp;&emsp;
+                              Contact Number: <input type="text" name="member1_contact" required>&emsp;&emsp;
+                              Email: <input type="email" name="member1_email" required>&emsp;&emsp;
                           </fieldset>
                       </div>
                           <br>
@@ -123,9 +123,9 @@
         else{
             counter++;
             var text =  '<fieldset id="m'+counter+'_field"> \
-                            Name: <input type="text" name="member'+counter+'_name">&emsp;&emsp;\
-                            Contact Number: <input type="text" name="member'+counter+'_contact">&emsp;&emsp; \
-                            Email: <input type="email" name="member'+counter+'_email">&emsp;&emsp;\
+                            Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
+                            Contact Number: <input type="text" name="member'+counter+'_contact" required>&emsp;&emsp; \
+                            Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
                             <button type="button" class="btn btn-default btn-sm btn-warning" \
                                 onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
                                 <span class="glyphicon glyphicon-minus-sign"></span>\
@@ -149,7 +149,6 @@
 
     $('#register_form').submit(function(){
       var registrationData = {
-          'csrfmiddlewaretoken' : $('input[name=csrfmiddlewaretoken]').val(),
         'event': $('#event_name option:selected').val(),
         'team_name': $('input[name=team_name]').val(),
         'main_contact': {
@@ -171,7 +170,9 @@
       $.ajax({
         type: 'POST',
         url: '/',
-        data: registrationData,
+          headers: { "X-CSRFToken": getCookie("csrftoken") },
+          contentType: 'application/json; charset=utf-8',
+        data: $.toJSON(registrationData),
         dataType: 'json'
       }).done(function(data) {
         console.log(data);
