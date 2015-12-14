@@ -46,7 +46,7 @@
                       <div class="form-group">
                           <label id="event_label" class="control-label col-xs-2">Event :</label>
                           <div class="col-xs-6">
-                              <select class="form-control" id="event_name" >
+                              <select class="form-control" id="event_name" required>
                                   <option value="code42day">CODE-4-2-DAY</option>
                                   <option value="codedef">CODEDEF</option>
                                   <option value="continnum">CONTINNUM</option>
@@ -113,12 +113,41 @@
   <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
   <script>
-    var max_members = 5;
-    var counter = 1;
+      // Global variables
+      var max_members = 5;
+      var counter = 1;
+      // TODO change as per event
+      var events = {"code42day" :"5",
+                    "codedef" :"1",
+                    "continnum" :"5",
+                    "commnet" :"5",
+                    "digisim" :"5",
+                    "embedtron" :"5",
+                    "funckit" :"5",
+                    "ichip" :"5",
+                    "ignite" :"5",
+                    "krypto" :"5",
+                    "mosaic" :"5",
+                    "muse" :"5"
+                    };
+
+      window.onload = function(){
+        document.getElementById('event_name').selectedIndex = -1;
+      };
+
+      $("#event_name").on("change", function(e){
+          max_members = parseInt(events[$('#event_name option:selected').val()])
+          if( $("#m" + (max_members+1) + "_field").length > 0){
+              var i = max_members + 1;
+              while(i <= 5){
+                  $("#m"+(i)+"_field").remove();
+              }
+          }
+      })
     function add_member(){
         //dynamically adds a member to the team
         if(counter >= max_members){
-            alert("Maximum" + max_members + "number of allowed members in a team");
+            alert("Maximum " + max_members + " number of allowed in " + $('#event_name option:selected').text());
         }
         else{
             counter++;
