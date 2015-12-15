@@ -119,7 +119,7 @@
       // TODO change as per event
       var events = {"code42day" :"5",
                     "codedef" :"1",
-                    "continnum" :"5",
+                    "continnum" :"5:",
                     "commnet" :"5",
                     "digisim" :"5",
                     "embedtron" :"5",
@@ -141,13 +141,15 @@
               var i = max_members + 1;
               while(i <= 5){
                   $("#m"+(i)+"_field").remove();
+                  i++;
               }
+              counter = max_members;
           }
-      })
+      });
     function add_member(){
         //dynamically adds a member to the team
         if(counter >= max_members){
-            alert("Maximum " + max_members + " number of allowed in " + $('#event_name option:selected').text());
+            alert("Maximum "+max_members+" is/are allowed in "+$('#event_name option:selected').text()+" event");
         }
         else{
             counter++;
