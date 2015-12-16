@@ -5,20 +5,20 @@
 
 {% block body %}
 <div class="green-mint">
-        <!-- Landing Section -->        
-        <div id="particles-js" class="green-wine"></div>        
+        <!-- Landing Section -->
+        <div id="particles-js" class="green-wine"></div>
         <section id="sec-1" class="no-padding">
             <div class="container center">
                 <div class="pushdown-10p"></div>
                 <div class="row">
                     <div class="col s12">
                         <img class="image-title" src="{% static 'img/udyam.png' %}">
-                    </div>                    
+                    </div>
                 </div> <br>
                 <div class="container">
                     <div class="col s6 center white-text">
                         <h5 class="white-text roboto-300 no-margin">
-                          Techno-Management fest, <br> Department of Electronics Engineering, IITBHU. <br><br>                     
+                          Techno-Management fest, <br> Department of Electronics Engineering, IITBHU. <br><br>
                         </h5>
                         <p class="no-margin">12th - 14th Feb</p>
                     </div>
@@ -27,12 +27,72 @@
                     <div class="row">
                         <div class="col s12">
                             <a class="btn btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger"
-                                 style="width: 50%; height: 50px; line-height: 50px;" data-target="#register_modal" data-toggle="modal">
+                                 style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" >
                                     REGISTER
-                            </a> 
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="modal modal-fixed-footer" id="register_modal">
+                <div class="modal-header">
+                    <div class="row">
+                        <div class="col m11">
+                            <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
+                        </div>
+                        <div class="col m1">
+                            <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
+                                    style="text-align: right;"> &times;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <form class="form-horizontal" method="post" id="register_form" >
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <select class="icons" id="event_name" >
+                                    <label id="event-label" >Team Name:</label>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="code42day" >CODE-4-2-DAY</option>
+                                    <option value="codedef" >CODEDEF</option>
+                                    <option value="continnum" >CONTINNUM</option>
+                                    <option value="commnet" >COMMNET</option>
+                                    <option value="digisim" >DIGISIM</option>
+                                    <option value="embedtron" >EMBEDTRON</option>
+                                    <option value="funckit" >FUNCKIT</option>
+                                    <option value="ichip" >I-CHIP</option>
+                                    <option value="ignite" >IGNITE</option>
+                                    <option value="krypto" >KRYPTO</option>
+                                    <option value="mosaic" >MOSIAC</option>
+                                    <option value="muse" >MUSE</option>
+                                </select>
+                            </div>
+                            <div class="col s6">
+                                <label id="team_lable">Team Name:</label>
+                                <input type="text" name="team_name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <fieldset id="tr_field">
+                                <legend >Team Representative:</legend>
+                                Name: <input type="text" name="member1_name" required>&emsp;&emsp;
+                                Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
+                                Email: <input type="email" name="member1_email" required>&emsp;&emsp;
+                            </fieldset>
+                        </div>
+                        <div class="container">
+                                <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                </button>
+                        </div>
+                        <div class="form-group" id="members_div">
+                        </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn btn-primary" type="submit" form="register_form">Register</button>
+                  </div>
             </div>
             <!-- Mountain Like overlay (above the particlejs background) -->
             <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
@@ -46,10 +106,10 @@
                         <h4 class="roboto-300">
 UDYAM is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
                         </h4>
-                        <p style="font-size: 1.5em" class="roboto-300">                            
-It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.                 
+                        <p style="font-size: 1.5em" class="roboto-300">
+It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.
                         </p>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s12 m4">
@@ -95,40 +155,40 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                             </div>
                             <div class="card-content white black-text"
                                  style="min-height: 140px;">
- 
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
-            </div>                        
-            <!-- 
+
+            </div>
+            <!--
             Map
             -->
-            
+
         </section>
         <div id="ground-inlets">
         <img class="overlay-ground-invert" src="{% static 'img/ground-green.png' %}">
         </div>
-        <section id="sec-3">                        
+        <section id="sec-3">
             <div class="row">
                 <div class="pushdown-5p"></div>
                 <!-- Mini cards -->
             <div class="container">
-                
+
                 <div class="row">
-                    
+
                     <!-- Date -->
                     <div class="col s12 m12">
                         <div class="card green-wine-trans border-side-white no-margin">
                             <div class="card-content">
                                 <h2 class="roboto-200">
-                                    Hospitality                                    
+                                    Hospitality
                                 </h2>
                                 <hr>
                                 <p>
                                  <a href="home.html#" class="malachite-text lightbox-52774140831453"></a>
-                                </p> 
+                                </p>
                                 <hr>
                                 <p></p>
                                 <hr>
@@ -139,7 +199,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col s12 m4">
@@ -164,23 +224,23 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="row">
                     <div class="col s12 m4">
-                        <a class="waves-effect waves-light btn-large fullWidth amber black-text" href="contactus.html">Contact Us</a>                        
+                        <a class="waves-effect waves-light btn-large fullWidth amber black-text" href="contactus.html">Contact Us</a>
                     </div>
                     <div class="col s12 m4">
-                        <a class="modal-trigger waves-effect waves-light btn-large fullWidth malachite black-text" href="#sponsors">Previous year's Sponsors</a>                        
+                        <a class="modal-trigger waves-effect waves-light btn-large fullWidth malachite black-text" href="#sponsors">Previous year's Sponsors</a>
                     </div>
                     <div class="col s12 m4">
-                        <a class="waves-effect waves-light btn-large fullWidth indigo darken-4" href="https://www.facebook.com/#">facebook</a>                        
+                        <a class="waves-effect waves-light btn-large fullWidth indigo darken-4" href="https://www.facebook.com/#">facebook</a>
                     </div>
                 </div>
-                
+
             </div>
             </div>
         </section>
-        <section id="sec-4">            
+        <section id="sec-4">
             <footer class="page-footer green-wine">
                 <div class="footer-copyright">
                     <div class="container center">
@@ -192,68 +252,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
             </footer>
         </section>
 
-  <div class="modal" id="register_form">
-      <div class="modal-content">
-        <!--<button type="button" class="modal-close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-          <h3 id="">Team Registration</h3>
-        <form class="form-horizontal" method="post" id="register_form" >
-            {% csrf_token %}
-            <div class="form-group">
-                <label id="event_label" class="control-label col-xs-2">Event :</label>
-                <div class="col-xs-6">
-                    <select class="form-control" id="event_name" required autofocus>
-                        <option value="code42day">CODE-4-2-DAY</option>
-                        <option value="codedef">CODEDEF</option>
-                        <option value="continnum">CONTINNUM</option>
-                        <option value="commnet">COMMNET</option>
-                        <option value="digisim">DIGISIM</option>
-                        <option value="embedtron">EMBEDTRON</option>
-                        <option value="funckit">FUNCKIT</option>
-                        <option value="ichip">I-CHIP</option>
-                        <option value="ignite">IGNITE</option>
-                        <option value="krypto">KRYPTO</option>
-                        <option value="mosaic">MOSIAC</option>
-                        <option value="muse">MUSE</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label id="team_lable" class="control-label col-xs-2">Team Name:</label>
-                <div class="col-xs-6">
-                    <input type="text" name="team_name" class="form-control" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <fieldset id="tr_field">
-                    <legend style="text-align: center;">Team Representative:</legend>
-                    Name: <input type="text" name="member1_name" required>&emsp;&emsp;
-                    Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
-                    Email: <input type="email" name="member1_email" required>&emsp;&emsp;
-                </fieldset>
-            </div>
-                <br>
-            <div class="form-group" id="members_div">
-                <legend id = 'legend'>
-                    <div class="container">
-                        <div class="col-md-10 align-center">
-                            <p style="text-align: center;"> Team Members:</p>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
-                                    <span class="glyphicon glyphicon-plus-sign"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </legend>
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-          <button class="btn btn-primary" type="submit" form="register_form">Register</button>
-      </div>
-  </div>
+
     <div id="sponsors" class="modal">
       <div class="modal-content">
         <h4>Previous year's sponsors</h4>
@@ -320,7 +319,8 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
       var max_members = 5;
       var counter = 1;
       // TODO change as per event
-      var events = {"code42day" :"5",
+      var events = {"" : 5,
+                    "code42day" :"5",
                     "codedef" :"1",
                     "continnum" :"5",
                     "commnet" :"5",
@@ -333,10 +333,6 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                     "mosaic" :"5",
                     "muse" :"5"
                     };
-
-      window.onload = function(){
-        document.getElementById('event_name').selectedIndex = -1;
-      };
 
       $("#event_name").on("change", function(){
           max_members = parseInt(events[$('#event_name option:selected').val()]);
@@ -357,6 +353,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         else{
             counter++;
             var text =  '<fieldset id="m'+counter+'_field"> \
+                            <legend style="text-align: center;">Member '+counter+' details:</legend>\
                             Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
                             Contact Number: <input type="text" name="member'+counter+'_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp; \
                             Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
@@ -370,13 +367,16 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
     }
     function remove_member(tag){
         $('#'+tag).remove();
-        $("fieldset").each(function(index) {
-            $(this).attr("id", "m" +(index+1)+"_field");
+        $mem_div = $("#members_div");
+        $mem_div.children("fieldset").each(function(index) {
+            var mem_id = index + 2;
+            $(this).attr("id", "m" +mem_id+"_field");
             $child = $(this).children('input');
-            $child.eq(0).attr("name", "member"+(index+1)+"_name");
-            $child.eq(1).attr("name", "member"+(index+1)+"_contact");
-            $child.eq(2).attr("name", "member"+(index+1)+"_email");
-            $(this).children("button").eq(0).attr("onclick","remove_member('m"+(index+1)+"_field')");
+            $child.eq(0).attr("name", "member"+mem_id+"_name");
+            $child.eq(1).attr("name", "member"+mem_id+"_contact");
+            $child.eq(2).attr("name", "member"+mem_id+"_email");
+            $(this).children("button").eq(0).attr("onclick","remove_member('m"+mem_id+"_field')");
+            $(this).children("legend").eq(0).html("Member "+ mem_id + " details")
         });
         counter--;
     }

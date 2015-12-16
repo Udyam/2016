@@ -564,3 +564,22 @@ core-menu > paper-item.core-selected {
     z-index: 2;
     bottom: 7px;
 }
+
+.modal.modal-fixed-footer{
+    top : 0px;
+    max-height: 95%;
+    height: 90%;
+    width: 95%;
+}
+
+#register_modal input{
+    width: auto;
+    height: 1.5rem;
+}
+
+#register_modal fieldset{
+    padding: 0em 1em 0em;
+}
+#form_heading{
+ margin-top: 20px;
+}
