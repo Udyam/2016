@@ -26,8 +26,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12">
-                            <a class="btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger" href="#register_form"
-                                 style="width: 50%; height: 50px; line-height: 50px;">
+                            <a class="btn btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger"
+                                 style="width: 50%; height: 50px; line-height: 50px;" data-target="#register_modal" data-toggle="modal">
                                     REGISTER
                             </a> 
                         </div>
@@ -127,7 +127,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                                 </h2>
                                 <hr>
                                 <p>
-                                 <a href="index.html#" class="malachite-text lightbox-52774140831453"></a>
+                                 <a href="home.html#" class="malachite-text lightbox-52774140831453"></a>
                                 </p> 
                                 <hr>
                                 <p></p>
@@ -184,7 +184,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
             <footer class="page-footer green-wine">
                 <div class="footer-copyright">
                     <div class="container center">
-                        <a class="grey-text text-darken-4 center" href="index.html#!">
+                        <a class="grey-text text-darken-4 center" href="home.html#!">
                             Designed by <a href="" class="grey-text text-darken-3 ">Viyat</a>
                         </a>
                     </div>
@@ -195,120 +195,121 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
   <div class="modal" id="register_form">
       <div class="modal-content">
         <!--<button type="button" class="modal-close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-         <h3 id="">Team Registration</h3>
-            <form class="form-horizontal" method="post" id="register_form" >
-                {% csrf_token %}
-                <div class="form-group">
-                    <label id="event_label" class="control-label col-xs-2">Event :</label>
-                    <div class="col-xs-6">
-                        <select class="form-control" id="event_name" required>
-                            <option value="code42day">CODE-4-2-DAY</option>
-                            <option value="codedef">CODEDEF</option>
-                            <option value="continnum">CONTINNUM</option>
-                            <option value="commnet">COMMNET</option>
-                            <option value="digisim">DIGISIM</option>
-                            <option value="embedtron">EMBEDTRON</option>
-                            <option value="funckit">FUNCKIT</option>
-                            <option value="ichip">I-CHIP</option>
-                            <option value="ignite">IGNITE</option>
-                            <option value="krypto">KRYPTO</option>
-                            <option value="mosaic">MOSIAC</option>
-                            <option value="muse">MUSE</option>
-                        </select>
-                    </div>
+          <h3 id="">Team Registration</h3>
+        <form class="form-horizontal" method="post" id="register_form" >
+            {% csrf_token %}
+            <div class="form-group">
+                <label id="event_label" class="control-label col-xs-2">Event :</label>
+                <div class="col-xs-6">
+                    <select class="form-control" id="event_name" required autofocus>
+                        <option value="code42day">CODE-4-2-DAY</option>
+                        <option value="codedef">CODEDEF</option>
+                        <option value="continnum">CONTINNUM</option>
+                        <option value="commnet">COMMNET</option>
+                        <option value="digisim">DIGISIM</option>
+                        <option value="embedtron">EMBEDTRON</option>
+                        <option value="funckit">FUNCKIT</option>
+                        <option value="ichip">I-CHIP</option>
+                        <option value="ignite">IGNITE</option>
+                        <option value="krypto">KRYPTO</option>
+                        <option value="mosaic">MOSIAC</option>
+                        <option value="muse">MUSE</option>
+                    </select>
                 </div>
-                <div class="form-group">
-                    <label id="team_lable" class="control-label col-xs-2">Team Name:</label>
-                    <div class="col-xs-6">
-                        <input type="text" name="team_name" class="form-control" required>
-                    </div>
+            </div>
+            <div class="form-group">
+                <label id="team_lable" class="control-label col-xs-2">Team Name:</label>
+                <div class="col-xs-6">
+                    <input type="text" name="team_name" class="form-control" required>
                 </div>
-                <div class="form-group">
-                    <fieldset id="tr_field">
-                        <legend style="text-align: center;">Team Representative:</legend>
-                        Name: <input type="text" name="member1_name" required>&emsp;&emsp;
-                        Contact Number: <input type="text" name="member1_contact" required>&emsp;&emsp;
-                        Email: <input type="email" name="member1_email" required>&emsp;&emsp;
-                    </fieldset>
-                </div>
-                    <br>
-                <div class="form-group" id="members_div">
-                    <legend id = 'legend'>
-                        <div class="container">
-                            <div class="col-md-10 align-center">
-                                <p style="text-align: center;"> Team Members:</p>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
-                                        <span class="glyphicon glyphicon-plus-sign"></span>
-                                    </button>
-                                </div>
+            </div>
+            <div class="form-group">
+                <fieldset id="tr_field">
+                    <legend style="text-align: center;">Team Representative:</legend>
+                    Name: <input type="text" name="member1_name" required>&emsp;&emsp;
+                    Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
+                    Email: <input type="email" name="member1_email" required>&emsp;&emsp;
+                </fieldset>
+            </div>
+                <br>
+            <div class="form-group" id="members_div">
+                <legend id = 'legend'>
+                    <div class="container">
+                        <div class="col-md-10 align-center">
+                            <p style="text-align: center;"> Team Members:</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
+                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                </button>
                             </div>
                         </div>
-                    </legend>
-                </div>
-            </form>
+                    </div>
+                </legend>
+            </div>
+        </form>
       </div>
       <div class="modal-footer">
           <button class="btn btn-primary" type="submit" form="register_form">Register</button>
       </div>
-    </div>
+  </div>
     <div id="sponsors" class="modal">
       <div class="modal-content">
         <h4>Previous year's sponsors</h4>
         <section class="sponsors"><br><br>
-        <div class="container" id="sponsors">
-            <div class="row">
-            <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mentor_Graphics_Logo.svg/1280px-Mentor_Graphics_Logo.svg.png">
+            <div class="container" id="sponsors">
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mentor_Graphics_Logo.svg/1280px-Mentor_Graphics_Logo.svg.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="http://upload.wikimedia.org/wikipedia/en/thumb/2/22/Freescale_Semiconductor_logo.svg/1280px-Freescale_Semiconductor_logo.svg.png">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="http://500.co/uploads/logo-54b94f44fec38f0b0ca4ba6c.png">
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-                 </div>
-            <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="http://upload.wikimedia.org/wikipedia/en/thumb/2/22/Freescale_Semiconductor_logo.svg/1280px-Freescale_Semiconductor_logo.svg.png">
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="http://www.vrworld.com/wp-content/uploads/2014/05/Nvidia-Logo1.png" height="200" width="300" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="https://www.hackerrank.com/assets/styleguide/logo_wordmark-vertical.png" height="200" width="300" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                      <div class="card medium">
+                        <div class="card-image">
+                          <img src="http://www.zostel.com/static/img/zostel-logo.png" height="100" width="300" />
+                        </div>
+                      </div>
+                    </div>
                 </div>
-              </div>
-                 </div>
-            <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="http://500.co/uploads/logo-54b94f44fec38f0b0ca4ba6c.png">
-                </div>
-              </div>
-                 </div>
-                </div>
-        <div class="row">
-                <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="http://www.vrworld.com/wp-content/uploads/2014/05/Nvidia-Logo1.png" height="200" width="300" />
-                </div>
-              </div>
-                 </div>
-                <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="https://www.hackerrank.com/assets/styleguide/logo_wordmark-vertical.png" height="200" width="300" />
-                </div>
-              </div>
-                 </div>
-                <div class="col s12 m6 l4">
-              <div class="card medium">
-                <div class="card-image">
-                  <img src="http://www.zostel.com/static/img/zostel-logo.png" height="100" width="300" />
-                </div>
-              </div>
-                 </div>
-        </div>
+            </div>
         </section>
       </div>
     </div>
-  </div>
+</div>
 {% endblock %}
 
 {% block js %}
@@ -321,7 +322,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
       // TODO change as per event
       var events = {"code42day" :"5",
                     "codedef" :"1",
-                    "continnum" :"5:",
+                    "continnum" :"5",
                     "commnet" :"5",
                     "digisim" :"5",
                     "embedtron" :"5",
@@ -337,8 +338,8 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         document.getElementById('event_name').selectedIndex = -1;
       };
 
-      $("#event_name").on("change", function(e){
-          max_members = parseInt(events[$('#event_name option:selected').val()])
+      $("#event_name").on("change", function(){
+          max_members = parseInt(events[$('#event_name option:selected').val()]);
           if( $("#m" + (max_members+1) + "_field").length > 0){
               var i = max_members + 1;
               while(i <= 5){
@@ -357,7 +358,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
             counter++;
             var text =  '<fieldset id="m'+counter+'_field"> \
                             Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
-                            Contact Number: <input type="text" name="member'+counter+'_contact" required>&emsp;&emsp; \
+                            Contact Number: <input type="text" name="member'+counter+'_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp; \
                             Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
                             <button type="button" class="btn btn-default btn-sm btn-warning" \
                                 onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
@@ -369,7 +370,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
     }
     function remove_member(tag){
         $('#'+tag).remove();
-        $("fieldset").each(function(index, element) {
+        $("fieldset").each(function(index) {
             $(this).attr("id", "m" +(index+1)+"_field");
             $child = $(this).children('input');
             $child.eq(0).attr("name", "member"+(index+1)+"_name");
