@@ -565,11 +565,21 @@ core-menu > paper-item.core-selected {
     bottom: 7px;
 }
 
+.modal{
+    max-height: 90%;
+    width: 95%;
+}
+
+.modal.modal-fixed-footer .modal-content {
+    padding: 15px; }
+
 .modal.modal-fixed-footer{
     top : 0px;
-    max-height: 95%;
-    height: 90%;
-    width: 95%;
+    height: 95%;
+}
+
+.modal.modal-fixed-footer .modal-footer {
+    height: 56px;
 }
 
 #register_modal input{
@@ -581,5 +591,10 @@ core-menu > paper-item.core-selected {
     padding: 0em 1em 0em;
 }
 #form_heading{
- margin-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.btn.btn-color-blank{
+    background-color: #ffffff;
 }

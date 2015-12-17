@@ -26,7 +26,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12">
-                            <a class="btn btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger"
+                            <a class="btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger"
                                  style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" >
                                     REGISTER
                             </a>
@@ -35,24 +35,22 @@
                 </div>
             </div>
             <div class="modal modal-fixed-footer" id="register_modal">
-                <div class="modal-header">
-                    <div class="row">
-                        <div class="col m11">
-                            <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
-                        </div>
-                        <div class="col m1">
-                            <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
-                                    style="text-align: right;"> &times;</p>
-                        </div>
+                <div class="row">
+                    <div class="col m11">
+                        <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
+                    </div>
+                    <div class="col m1">
+                        <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
+                                style="text-align: right;"> &times;</p>
                     </div>
                 </div>
                 <div class="modal-content">
                     <form class="form-horizontal" method="post" id="register_form" >
                         {% csrf_token %}
                         <div class="row">
-                            <div class="input-field col s12 m6">
-                                <select class="icons" id="event_name" >
-                                    <label id="event-label" >Team Name:</label>
+                            <div class="col m6 s12">
+                                <select id="event_name" >
+                                    <label id="event-label" >Event:</label>
                                     <option value="" disabled selected>Choose your option</option>
                                     <option value="code42day" >CODE-4-2-DAY</option>
                                     <option value="codedef" >CODEDEF</option>
@@ -68,30 +66,28 @@
                                     <option value="muse" >MUSE</option>
                                 </select>
                             </div>
-                            <div class="col s6">
+                            <div class="col m6 s12">
                                 <label id="team_lable">Team Name:</label>
                                 <input type="text" name="team_name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <fieldset id="tr_field">
-                                <legend >Team Representative:</legend>
+                                <legend style="text-align: center;">Team Representative:</legend>
                                 Name: <input type="text" name="member1_name" required>&emsp;&emsp;
                                 Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
                                 Email: <input type="email" name="member1_email" required>&emsp;&emsp;
+                                <a class="btn btn-color-blank border-side-green waves-effect waves-green" onclick="add_member()">
+                                    <span>Add</span>
+                                </a>
                             </fieldset>
-                        </div>
-                        <div class="container">
-                                <button type="button" class="btn btn-default btn-sm btn-success" onclick="add_member()">
-                                    <span class="glyphicon glyphicon-plus-sign"></span>
-                                </button>
                         </div>
                         <div class="form-group" id="members_div">
                         </div>
                     </form>
                   </div>
                   <div class="modal-footer">
-                      <button class="btn btn-primary" type="submit" form="register_form">Register</button>
+                      <button class="btn" type="submit" form="register_form">Register</button>
                   </div>
             </div>
             <!-- Mountain Like overlay (above the particlejs background) -->
@@ -357,10 +353,10 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                             Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
                             Contact Number: <input type="text" name="member'+counter+'_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp; \
                             Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
-                            <button type="button" class="btn btn-default btn-sm btn-warning" \
+                            <a class="btn btn-color-blank border-side-red waves-effect waves-red" \
                                 onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
-                                <span class="glyphicon glyphicon-minus-sign"></span>\
-                            </button>\
+                                <span> - </span>\
+                            </a>\
                         </fieldset>';
             $("#members_div").append(text);
         }
