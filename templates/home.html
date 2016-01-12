@@ -26,7 +26,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s12">
-                            <a class="btn-flat green-moss border-green white-text waves-effect waves-green modal-trigger"
+                            <a class="btn-flat green-moss border-green white-text modal-trigger"
                                  style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" >
                                     REGISTER
                             </a>
@@ -34,7 +34,9 @@
                     </div>
                 </div>
             </div>
-            <div class="modal modal-fixed-footer" id="register_modal">
+            <!-- Mountain Like overlay (above the particlejs background) -->
+            <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
+            <div class="modal" id="register_modal">
                 <div class="row">
                     <div class="col m11">
                         <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
@@ -47,38 +49,45 @@
                 <div class="modal-content">
                     <form class="form-horizontal" method="post" id="register_form" >
                         {% csrf_token %}
+
                         <div class="row">
-                            <div class="col m6 s12">
-                                <select id="event_name" >
-                                    <label id="event-label" >Event:</label>
-                                    <option value="" disabled selected>Choose your option</option>
-                                    <option value="code42day" >CODE-4-2-DAY</option>
-                                    <option value="codedef" >CODEDEF</option>
-                                    <option value="continnum" >CONTINNUM</option>
-                                    <option value="commnet" >COMMNET</option>
-                                    <option value="digisim" >DIGISIM</option>
-                                    <option value="embedtron" >EMBEDTRON</option>
-                                    <option value="funckit" >FUNCKIT</option>
-                                    <option value="ichip" >I-CHIP</option>
-                                    <option value="ignite" >IGNITE</option>
-                                    <option value="krypto" >KRYPTO</option>
-                                    <option value="mosaic" >MOSIAC</option>
-                                    <option value="muse" >MUSE</option>
-                                </select>
+                            <div class="col s12 m6 ">
+                                <div class="row">
+                                    <div class="col m2 s12">
+                                        <label for="event_name">Event:</label>
+                                    </div>
+                                    <div class="col m10 s12">
+                                        <select id="event_name" class="browser-default">
+                                            <option value="" disabled selected>Choose your option</option>
+                                            <option value="code42day" >CODE-4-2-DAY</option>
+                                            <option value="codedef" >CODEDEF</option>
+                                            <option value="continnum" >CONTINNUM</option>
+                                            <option value="commnet" >COMMNET</option>
+                                            <option value="digisim" >DIGISIM</option>
+                                            <option value="embedtron" >EMBEDTRON</option>
+                                            <option value="funckit" >FUNCKIT</option>
+                                            <option value="ichip" >I-CHIP</option>
+                                            <option value="ignite" >IGNITE</option>
+                                            <option value="krypto" >KRYPTO</option>
+                                            <option value="mosaic" >MOSIAC</option>
+                                            <option value="muse" >MUSE</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col m6 s12">
-                                <label id="team_lable">Team Name:</label>
+                            <div class="col s12 m4 offset-m2">
+                                <label for="team_name">Team Name:</label>
                                 <input type="text" name="team_name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <fieldset id="tr_field">
-                                <legend style="text-align: center;">Team Representative:</legend>
+                                <legend>Team Representative:</legend>
                                 Name: <input type="text" name="member1_name" required>&emsp;&emsp;
                                 Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
                                 Email: <input type="email" name="member1_email" required>&emsp;&emsp;
                                 <a class="btn btn-color-blank border-side-green waves-effect waves-green" onclick="add_member()">
-                                    <span>Add</span>
+                                    <span>Add</span> <!-- If changed the tag of button... do change it in remove member functon-->
                                 </a>
                             </fieldset>
                         </div>
@@ -90,8 +99,6 @@
                       <button class="btn" type="submit" form="register_form">Register</button>
                   </div>
             </div>
-            <!-- Mountain Like overlay (above the particlejs background) -->
-            <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
         </section>
         <!-- Start of Below the Fold -->
         <section id="sec-2" class="green-mint white-text">
@@ -371,7 +378,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
             $child.eq(0).attr("name", "member"+mem_id+"_name");
             $child.eq(1).attr("name", "member"+mem_id+"_contact");
             $child.eq(2).attr("name", "member"+mem_id+"_email");
-            $(this).children("button").eq(0).attr("onclick","remove_member('m"+mem_id+"_field')");
+            $(this).children("a").eq(0).attr("onclick","remove_member('m"+mem_id+"_field')");
             $(this).children("legend").eq(0).html("Member "+ mem_id + " details")
         });
         counter--;
