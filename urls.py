@@ -12,5 +12,5 @@ from udyam.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', view=index, name='home'),
-    url(r'^(?P<name>[\w\-]+)$', view=events, name="events")
+    url(r'^(?P<page>[\w\-]+)$', view=static_page, name="p_static")
 ]

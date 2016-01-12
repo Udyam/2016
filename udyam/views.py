@@ -12,5 +12,6 @@ def index(request):
     return render(request, 'home.html')
 
 
-def events(request, name):
-    pass
+def static_page(request, page):
+    page += '.html'
+    return render(request, page)

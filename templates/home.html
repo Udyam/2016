@@ -4,25 +4,23 @@
 {% block title %} Home{% endblock %}
 
 {% block body %}
-<div class="green-mint">
-        <!-- Landing Section -->
-        <div id="particles-js" class="green-wine"></div>
-        <section id="sec-1" class="no-padding">
-            <div class="container center">
-                <div class="pushdown-10p"></div>
-                <div class="row">
-                    <div class="col s12">
-                        <img class="image-title" src="{% static 'img/udyam.png' %}">
-                    </div>
-                </div> <br>
-                <div class="container">
-                    <div class="col s6 center white-text">
-                        <h5 class="white-text roboto-300 no-margin">
-                          Techno-Management fest, <br> Department of Electronics Engineering, IITBHU. <br><br>
-                        </h5>
-                        <p class="no-margin">12th - 14th Feb</p>
-                    </div>
-                </div> <br>
+    <!-- Landing Section -->
+    <section id="sec-1" class="no-padding">
+        <div class="container center">
+            <div class="pushdown-10p"></div>
+            <div class="row">
+                <div class="col s12">
+                    <img class="image-title" src="{% static 'img/udyam.png' %}">
+                </div>
+            </div> <br>
+            <div class="container">
+                <div class="col s6 center white-text">
+                    <h5 class="white-text roboto-300 no-margin">
+                      Techno-Management fest, <br> Department of Electronics Engineering, IITBHU. <br><br>
+                    </h5>
+                    <p class="no-margin">12th - 14th Feb</p>
+                </div>
+            </div> <br>
                 <div class="container">
                     <div class="row">
                         <div class="col s12">
@@ -33,227 +31,227 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Mountain Like overlay (above the particlejs background) -->
-            <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
-            <div class="modal" id="register_modal">
-                <div class="row">
-                    <div class="col m11">
-                        <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
-                    </div>
-                    <div class="col m1">
-                        <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
-                                style="text-align: right;"> &times;</p>
-                    </div>
+        </div>
+        <!-- Mountain Like overlay (above the particlejs background) -->
+        <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
+        <div class="modal" id="register_modal">
+            <div class="row">
+                <div class="col m11">
+                    <h3 id = "form_heading" style="text-align: center;">Team Registration</h3>
                 </div>
-                <div class="modal-content">
-                    <form class="form-horizontal" method="post" id="register_form" >
-                        {% csrf_token %}
+                <div class="col m1">
+                    <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
+                            style="text-align: right;"> &times;</p>
+                </div>
+            </div>
+            <div class="modal-content">
+                <form class="form-horizontal" method="post" id="register_form" >
+                    {% csrf_token %}
 
-                        <div class="row">
-                            <div class="col s12 m6 ">
-                                <div class="row">
-                                    <div class="col m2 s12">
-                                        <label for="event_name">Event:</label>
-                                    </div>
-                                    <div class="col m10 s12">
-                                        <select id="event_name" class="browser-default">
-                                            <option value="" disabled selected>Choose your option</option>
-                                            <option value="code42day" >CODE-4-2-DAY</option>
-                                            <option value="codedef" >CODEDEF</option>
-                                            <option value="continnum" >CONTINNUM</option>
-                                            <option value="commnet" >COMMNET</option>
-                                            <option value="digisim" >DIGISIM</option>
-                                            <option value="embedtron" >EMBEDTRON</option>
-                                            <option value="funckit" >FUNCKIT</option>
-                                            <option value="ichip" >I-CHIP</option>
-                                            <option value="ignite" >IGNITE</option>
-                                            <option value="krypto" >KRYPTO</option>
-                                            <option value="mosaic" >MOSIAC</option>
-                                            <option value="muse" >MUSE</option>
-                                        </select>
-                                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 ">
+                            <div class="row">
+                                <div class="col m2 s12">
+                                    <label for="event_name">Event:</label>
+                                </div>
+                                <div class="col m10 s12">
+                                    <select id="event_name" class="browser-default">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="code42day" >CODE-4-2-DAY</option>
+                                        <option value="codedef" >CODEDEF</option>
+                                        <option value="continnum" >CONTINNUM</option>
+                                        <option value="commnet" >COMMNET</option>
+                                        <option value="digisim" >DIGISIM</option>
+                                        <option value="embedtron" >EMBEDTRON</option>
+                                        <option value="funckit" >FUNCKIT</option>
+                                        <option value="ichip" >I-CHIP</option>
+                                        <option value="ignite" >IGNITE</option>
+                                        <option value="krypto" >KRYPTO</option>
+                                        <option value="mosaic" >MOSIAC</option>
+                                        <option value="muse" >MUSE</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col s12 m4 offset-m2">
-                                <label for="team_name">Team Name:</label>
-                                <input type="text" name="team_name" class="form-control" required>
-                            </div>
                         </div>
-                        <div class="form-group">
-                            <fieldset id="tr_field">
-                                <legend>Team Representative:</legend>
-                                Name: <input type="text" name="member1_name" required>&emsp;&emsp;
-                                Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
-                                Email: <input type="email" name="member1_email" required>&emsp;&emsp;
-                                <a class="btn btn-color-blank border-side-green waves-effect waves-green" onclick="add_member()">
-                                    <span>Add</span> <!-- If changed the tag of button... do change it in remove member functon-->
-                                </a>
-                            </fieldset>
-                        </div>
-                        <div class="form-group" id="members_div">
-                        </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                      <button class="btn" type="submit" form="register_form">Register</button>
-                  </div>
-            </div>
-        </section>
-        <!-- Start of Below the Fold -->
-        <section id="sec-2" class="green-mint white-text">
-            <div class="container">
-                <div class="row">
-                    <div class="center">
-                        <img src="{% static 'img/t-satellite-hero.png' %}" style="width: 10%;">
-                        <h4 class="roboto-300">
-UDYAM is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
-                        </h4>
-                        <p style="font-size: 1.5em" class="roboto-300">
-It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card green-wine">
-                            <div class="card-content white-text">
-                                <a class="btn-floating right center green-spring">
-                                    1
-                                </a>
-                                <h5>
-                                  <a href="/drishti"> Drishti </a>
-                                </h5>
-                            </div>
-                            <div class="card-content white black-text"
-                                 style="min-height: 140px;">
-Drishti is an exhibition of a plethora of working solutions of the problem statements of previous year's UDYAM and yesteryears' AAYAM. Drishti is tailor-made to showcase the dedication of the participants. It stands as a dias for practical application of text-book knowledge. It serves as a golden opportunity to all the roads, be it the one less travelled by, or the opposite. Drishti is the window to how beautifully the participants have performed on both these roads.
-                            </div>
+                        <div class="col s12 m4 offset-m2">
+                            <label for="team_name">Team Name:</label>
+                            <input type="text" name="team_name" class="form-control" required>
                         </div>
                     </div>
-                    <div class="col s12 m4">
-                        <div class="card green-wine">
-                            <div class="card-content white-text">
-                                <a class="btn-floating right center green-spring">
-                                    2
-                                </a>
-                                <h5>
-                                  <a href="/events"> Events </a>
-                                </h5>
-                            </div>
-                            <div class="card-content white black-text"
-                                 style="min-height: 140px;">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <fieldset id="tr_field">
+                            <legend>Team Representative:</legend>
+                            Name: <input type="text" name="member1_name" required>&emsp;&emsp;
+                            Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
+                            Email: <input type="email" name="member1_email" required>&emsp;&emsp;
+                            <a class="btn btn-color-blank border-side-green waves-effect waves-green" onclick="add_member()">
+                                <span>Add</span> <!-- If changed the tag of button... do change it in remove member functon-->
+                            </a>
+                        </fieldset>
                     </div>
-                    <div class="col s12 m4">
-                        <div class="card green-wine">
-                            <div class="card-content white-text">
-                                <a class="btn-floating right center green-spring">
-                                    3
-                                </a>
-                                <h5>
-                                    Workshops <span class="transparent-text">hi hi</span>
-                                </h5>
-                            </div>
-                            <div class="card-content white black-text"
-                                 style="min-height: 140px;">
-
-                            </div>
-                        </div>
+                    <div class="form-group" id="members_div">
                     </div>
-                </div>
-
-            </div>
-            <!--
-            Map
-            -->
-
-        </section>
-        <div id="ground-inlets">
-        <img class="overlay-ground-invert" src="{% static 'img/ground-green.png' %}">
+                </form>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn" type="submit" form="register_form">Register</button>
+              </div>
         </div>
-        <section id="sec-3">
+    </section>
+    <!-- Start of Below the Fold -->
+    <section id="sec-2" class="green-mint white-text">
+        <div class="container">
             <div class="row">
-                <div class="pushdown-5p"></div>
-                <!-- Mini cards -->
-            <div class="container">
-
-                <div class="row">
-
-                    <!-- Date -->
-                    <div class="col s12 m12">
-                        <div class="card green-wine-trans border-side-white no-margin">
-                            <div class="card-content">
-                                <h2 class="roboto-200">
-                                    Hospitality
-                                </h2>
-                                <hr>
-                                <p>
-                                 <a href="home.html#" class="malachite-text lightbox-52774140831453"></a>
-                                </p>
-                                <hr>
-                                <p></p>
-                                <hr>
-                                <p>
-                                   <b>
-                                    </b>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="center">
+                    <img src="{% static 'img/t-satellite-hero.png' %}" style="width: 10%;">
+                    <h4 class="roboto-300">
+UDYAM is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
+                    </h4>
+                    <p style="font-size: 1.5em" class="roboto-300">
+It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="card green-wine-trans border-side-amber no-margin">
-                            <div class="card-content">
-                                <p> Orientation & Workshops</p>
-                                <h4>
-                                    Feb 14, 2016
-                                </h4>
-                                <hr class="yellow-text">
-                                <p>Events</p>
-                                <h4>March 21-22, 2016</h4>
-                                <hr>
-                            </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card green-wine">
+                        <div class="card-content white-text">
+                            <a class="btn-floating right center green-spring">
+                                1
+                            </a>
+                            <h5>
+                              <a href="/drishti"> Drishti </a>
+                            </h5>
                         </div>
-                    </div>
-                    <div class="col s12 m8" >
-                        <div class="card green-wine-trans border-side-red no-margin">
-                            <div class="card-content">
-                                <p> General Requirements </p>
-                                <hr>
-                            </div>
+                        <div class="card-content white black-text"
+                             style="min-height: 140px;">
+Drishti is an exhibition of a plethora of working solutions of the problem statements of previous year's UDYAM and yesteryears' AAYAM. Drishti is tailor-made to showcase the dedication of the participants. It stands as a dias for practical application of text-book knowledge. It serves as a golden opportunity to all the roads, be it the one less travelled by, or the opposite. Drishti is the window to how beautifully the participants have performed on both these roads.
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col s12 m4">
-                        <a class="waves-effect waves-light btn-large fullWidth amber black-text" href="contactus.html">Contact Us</a>
+                <div class="col s12 m4">
+                    <div class="card green-wine">
+                        <div class="card-content white-text">
+                            <a class="btn-floating right center green-spring">
+                                2
+                            </a>
+                            <h5>
+                              <a href="{% url 'p_static' 'events' %}"> Events </a>
+                            </h5>
+                        </div>
+                        <div class="card-content white black-text"
+                             style="min-height: 140px;">
+                        </div>
                     </div>
-                    <div class="col s12 m4">
-                        <a class="modal-trigger waves-effect waves-light btn-large fullWidth malachite black-text" href="#sponsors">Previous year's Sponsors</a>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card green-wine">
+                        <div class="card-content white-text">
+                            <a class="btn-floating right center green-spring">
+                                3
+                            </a>
+                            <h5>
+                                Workshops <span class="transparent-text">hi hi</span>
+                            </h5>
+                        </div>
+                        <div class="card-content white black-text"
+                             style="min-height: 140px;">
+
+                        </div>
                     </div>
-                    <div class="col s12 m4">
-                        <a class="waves-effect waves-light btn-large fullWidth indigo darken-4" href="https://www.facebook.com/#">facebook</a>
+                </div>
+            </div>
+
+        </div>
+        <!--
+        Map
+        -->
+
+    </section>
+    <div id="ground-inlets">
+    <img class="overlay-ground-invert" src="{% static 'img/ground-green.png' %}">
+    </div>
+    <section id="sec-3">
+        <div class="row">
+            <div class="pushdown-5p"></div>
+            <!-- Mini cards -->
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Date -->
+                <div class="col s12 m12">
+                    <div class="card green-wine-trans border-side-white no-margin">
+                        <div class="card-content">
+                            <h2 class="roboto-200">
+                                Hospitality
+                            </h2>
+                            <hr>
+                            <p>
+                             <a href="home.html#" class="malachite-text lightbox-52774140831453"></a>
+                            </p>
+                            <hr>
+                            <p></p>
+                            <hr>
+                            <p>
+                               <b>
+                                </b>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
             </div>
-            </div>
-        </section>
-        <section id="sec-4">
-            <footer class="page-footer green-wine">
-                <div class="footer-copyright">
-                    <div class="container center">
-                        <a class="grey-text text-darken-4 center" href="home.html#!">
-                            Designed by <a href="" class="grey-text text-darken-3 ">Viyat</a>
-                        </a>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card green-wine-trans border-side-amber no-margin">
+                        <div class="card-content">
+                            <p> Orientation & Workshops</p>
+                            <h4>
+                                Feb 14, 2016
+                            </h4>
+                            <hr class="yellow-text">
+                            <p>Events</p>
+                            <h4>March 21-22, 2016</h4>
+                            <hr>
+                        </div>
                     </div>
-                  </div>
-            </footer>
-        </section>
+                </div>
+                <div class="col s12 m8" >
+                    <div class="card green-wine-trans border-side-red no-margin">
+                        <div class="card-content">
+                            <p> General Requirements </p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m4">
+                    <a class="waves-effect waves-light btn-large fullWidth amber black-text" href="contactus.html">Contact Us</a>
+                </div>
+                <div class="col s12 m4">
+                    <a class="modal-trigger waves-effect waves-light btn-large fullWidth malachite black-text" href="#sponsors">Previous year's Sponsors</a>
+                </div>
+                <div class="col s12 m4">
+                    <a class="waves-effect waves-light btn-large fullWidth indigo darken-4" href="https://www.facebook.com/#">facebook</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <section id="sec-4">
+        <footer class="page-footer green-wine">
+            <div class="footer-copyright">
+                <div class="container center">
+                    <a class="grey-text text-darken-4 center" href="home.html#!">
+                        Designed by <a href="" class="grey-text text-darken-3 ">Viyat</a>
+                    </a>
+                </div>
+              </div>
+        </footer>
+    </section>
 
 
     <div id="sponsors" class="modal">
@@ -311,7 +309,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         </section>
       </div>
     </div>
-</div>
+
 {% endblock %}
 
 {% block js %}

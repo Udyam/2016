@@ -16,15 +16,17 @@
     <style> [data-sr] { visibility: hidden; } </style>         
 </head>
 <body>
-  {% block body %}
-  {% endblock %}
-
-  {% block js %}
-  <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
-  <script src='{% static "js/scrollReveal.min.js" %}'></script>
-  <script src="{% static 'js/laurenz.js' %}"></script>
-  {% endblock %}
+    <div class="green-mint">
+        <div id="particles-js" class="green-wine"></div>
+        {% block body %}
+        {% endblock %}
+    </div>
+    {% block js %}
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+    <script src='{% static "js/scrollReveal.min.js" %}'></script>
+    <script src="{% static 'js/laurenz.js' %}"></script>
+    {% endblock %}
 </body>
 </html>
