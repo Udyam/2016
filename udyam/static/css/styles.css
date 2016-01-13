@@ -567,7 +567,7 @@ core-menu > paper-item.core-selected {
 
 .modal{
     max-height: 90%;
-    width: 95%;
+    width: 1220px;
 }
 
 .modal.modal-fixed-footer .modal-content {

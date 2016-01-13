@@ -8,6 +8,7 @@
     {% block css %}
         <link href="{% static 'css/materialize.css' %}" rel="stylesheet">
         <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'css/TimeCircles.css' %}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% endblock %}
     <!--Let browser know website is optimized for mobile-->
@@ -15,18 +16,20 @@
     <!-- Scroll Animation Initialize -->
     <style> [data-sr] { visibility: hidden; } </style>         
 </head>
+<div id="particles-js" class="green-wine"></div>
 <body>
-    <div class="green-mint">
-        <div id="particles-js" class="green-wine"></div>
+<div class="green-mint">
         {% block body %}
         {% endblock %}
     </div>
     {% block js %}
-    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
-    <script src='{% static "js/scrollReveal.min.js" %}'></script>
-    <script src="{% static 'js/laurenz.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+        <script src='{% static "js/scrollReveal.min.js" %}'></script>
+        <script src="{% static 'js/laurenz.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/TimeCircles.js'%}"></script>
+        <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
     {% endblock %}
 </body>
 </html>
