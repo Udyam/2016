@@ -7,6 +7,55 @@
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
         <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="3s"></div>
+        <div id="menu_list" style="z-index:1;margin-top:0vh;position:fixed; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="2s" data-wow-duration = "1s">
+            <ul class = "sidemenu">
+                <li class="wow bounceInUp" data-wow-delay="2s">
+                    <a href="AboutUs/index.html">
+                    <div class = "subbtn">
+                    About&nbsp;
+                    <i class = "fa fa-globe fa-2x"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.5s">
+                    <a href="Feedback/index.html">
+                    <div class = "subbtn">
+                    Events&nbsp;
+                    <i class = "fa fa-cogs fa-2x wow fadeInUp"></i>
+                    </div></a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.1s">
+                    <a href="Accommodation/index.html">
+                    <div class = "subbtn">
+                    Accommodation&nbsp;
+                    <i class = "fa fa-bed fa-2x"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.2s">
+                    <a href="Sponsors/index.html">
+                    <div class = "subbtn">
+                    Sponsors&nbsp;
+                    <i class = "fa fa-flag-checkered fa-2x"></i>
+                    </div>
+                    </a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.3s">
+                    <a href="ReachBITS/index.html">
+                    <div class = "subbtn">
+                    Workshop&nbsp;
+                    <i class = "fa fa-wrench fa-2x wow fadeInUp"></i>
+                    </div></a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.4s">
+                    <a href="Team/index.html">
+                    <div class = "subbtn">
+                    Our Team&nbsp;
+                    <i class = "fa fa-group fa-2x"></i>
+                    </div></a>
+                </li>
+            </ul>
+        </div>
         <div class="container center">
             <div class="pushdown-2p"></div>
             <div class="row">
@@ -17,21 +66,21 @@
             <div class="container">
                 <div class="col s6 center white-text">
                     <h5 class="white-text roboto-300 no-margin">
-                      Techno-Management fest, <br> Department of Electronics Engineering, IITBHU. <br><br>
+                      Techno-Management fest, <br> Department of Electronics Engineering, IIT(BHU). <br><br>
                     </h5>
                     <p class="no-margin">12th - 14th Feb</p>
                 </div>
             </div> <br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12">
-                            <a class="btn-flat green-moss border-green white-text modal-trigger"
-                                 style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" >
-                                    REGISTER
-                            </a>
-                        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <a class="btn-flat green-moss border-green white-text modal-trigger"
+                             style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" onclick="hide_menu()">
+                                REGISTER
+                        </a>
                     </div>
                 </div>
+            </div>
         </div>
         <!-- Mountain Like overlay (above the particlejs background) -->
         <img class="overlay-ground" src="{% static 'img/ground-green.png' %}">
@@ -42,7 +91,7 @@
                 </div>
                 <div class="col m1">
                     <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
-                            style="text-align: right;"> &times;</p>
+                            style="text-align: right;" onclick="show_menu()"> &times;</p>
                 </div>
             </div>
             <div class="modal-content">
@@ -85,8 +134,8 @@
                             Name: <input type="text" name="member1_name" required>&emsp;&emsp;
                             Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
                             Email: <input type="email" name="member1_email" required>&emsp;&emsp;
-                            <a class="btn btn-color-blank border-side-green waves-effect waves-green" onclick="add_member()">
-                                <span>Add</span> <!-- If changed the tag of button... do change it in remove member functon-->
+                            <a class="btn fa fa-plus fa-2x" onclick="add_member()">
+                                <!-- If changed the tag of button... do change it in remove member functon-->
                             </a>
                         </fieldset>
                     </div>
@@ -360,9 +409,8 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
                             Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
                             Contact Number: <input type="text" name="member'+counter+'_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp; \
                             Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
-                            <a class="btn btn-color-blank border-side-red waves-effect waves-red" \
+                            <a class="btn fa fa-remove fa-2x" \
                                 onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
-                                <span> - </span>\
                             </a>\
                         </fieldset>';
             $("#members_div").append(text);
@@ -384,7 +432,15 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         counter--;
     }
 
+    function hide_menu(){
+        $('#menu_list').attr("class", "hide");
+    }
+
+    function show_menu(){
+        $('#menu_list').attr("class", "wow fadeInLeft");
+    }
     $('#register_form').submit(function(){
+        show_menu();
       var registrationData = {
         'event': $('#event_name option:selected').val(),
         'team_name': $('input[name=team_name]').val(),
@@ -426,7 +482,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         "animation": "smooth",
         "bg_width": 1,
         "fg_width": 0.1,
-        "circle_bg_color": "#60686F",
+        "circle_bg_color": "#143C15",
         "time": {
         "Days": {
             "text": "Days",
@@ -435,7 +491,7 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         },
         "Hours": {
             "text": "Hours",
-            "color": "#34495e",
+            "color": "#1F9E64",
             "show": true
         },
         "Minutes": {
@@ -451,4 +507,132 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
         }
         });
   </script>
+    <style type="text/css">
+
+		a .fa-facebook-f:hover{
+			color: #3B5998;
+			transition: color 0.4s;
+		}
+		a .fa-twitter:hover{
+			color: #00aced;
+			transition: color 0.4s;
+		}
+		a .fa-youtube-play:hover{
+			color: #bb0000;
+			transition: color 0.4s;
+		}
+
+		/*@media only screen and (max-width: 500px){
+			#backvideo,#demo-canvas {
+				display: none;
+			}
+		}*/
+
+
+		/*@media only screen and (max-device-aspect-ratio: 82/50){
+			#backvideo, #demo-canvas {
+				display: none;
+			}
+		}*/
+		.mainbtn{
+			color : rgba(255,255,255,0.5);
+			transition: color 0.7s;
+			-webkit-transform: translateY(15px);
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -o-transform: translateY(15px);
+    transform: translateY(15px);
+    -webkit-transition: -webkit-transform 0.3s 0.1s;
+    -moz-transition: -moz-transform 0.3s 0.1s;
+    transition: transform 0.3s 0.1s;
+    cursor:pointer;
+		}
+		.mainbtn:hover {
+			color : #e87e04;
+			transition: color 0.7s;
+			-webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.3s 0.1s;
+    -moz-transition: -moz-transform 0.3s 0.1s;
+    transition: transform 0.3s 0.1s;
+
+
+
+		}
+
+
+
+		.mainbtn .textbtn{
+			color : rgba(255,255,255,0.5);
+			transition: color 0.7s;
+			-webkit-transform: translateY(12px);
+    -moz-transform: translateY(12px);
+    -ms-transform: translateY(12px);
+    -o-transform: translateY(12px);
+    transform: translateY(12px);
+    -webkit-transition: -webkit-transform 0.3s 0.1s;
+    -moz-transition: -moz-transform 0.3s 0.1s;
+    transition: transform 0.3s 0.1s;
+		}
+		.mainbtn:hover .textbtn{
+			color : #e87e04;
+			transition: color 0.7s;
+			-webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity 0.3s 0.1s, -webkit-transform 0.3s 0.1s;
+    -moz-transition: opacity 0.3s 0.1s, -moz-transform 0.3s 0.1s;
+    transition: opacity 0.3s 0.1s, transform 0.3s 0.1s;
+		}
+
+		.subbtn{
+			color : rgba(255,255,255,0.5);
+			transition: color 0.7s;
+			-webkit-transform: translateX(-25px);
+    -moz-transform: translateX(-25px);
+    -ms-transform: translateX(-25px);
+    -o-transform: translateX(-25px);
+    transform: translateX(-25px);
+    -webkit-transition: -webkit-transform 0.3s 0.1s;
+    -moz-transition: -moz-transform 0.3s 0.1s;
+    transition: transform 0.3s 0.1s;
+    cursor:pointer;
+		}
+
+		.subbtn:hover {
+			color : #e87e04;
+			transition: color 0.7s;
+			-webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 0.3s 0.1s;
+    -moz-transition: -moz-transform 0.3s 0.1s;
+    transition: transform 0.3s 0.1s;
+
+
+		}
+
+		.sidemenu{
+			list-style-type: none;
+		}
+		.sidemenu i {
+			width: 20%;
+		}
+		.sidemenu li {
+			padding: 10px;
+			display:block;
+		}
+		.bottommenu li {
+			display: inline-block;
+			text-align: center;
+			width: 150px;
+		}
+		</style>
 {% endblock %}
