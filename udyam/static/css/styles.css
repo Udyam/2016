@@ -566,6 +566,7 @@ core-menu > paper-item.core-selected {
 }
 
 .modal{
+    z-index: 2;
     max-height: 90%;
     width: 1220px;
 }
