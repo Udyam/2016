@@ -1,9 +1,23 @@
-{% extends 'base.html' %}
 {% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UDYAM 2016 | Home</title>
+    <link href="{% static 'css/materialize.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/TimeCircles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+    <!-- Scroll Animation Initialize -->
+    <style> [data-sr] { visibility: hidden; } </style>
+</head>
 
-{% block title %} Home{% endblock %}
-
-{% block body %}
+<body>
+    <div id="particles-js" class="green-wine"></div>
+    <div class="green-mint"> </div>
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
         <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="3s"></div>
@@ -154,28 +168,25 @@
             <div class="row">
                 <div class="center">
                     <img src="{% static 'img/t-satellite-hero.png' %}" style="width: 10%;">
-                    <h4 class="roboto-300">
-UDYAM is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
-                    </h4>
-                    <p style="font-size: 1.5em" class="roboto-300">
-It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.
-                    </p>
+                    <h5 class="roboto-300">
+<b>UDYAM</b> is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
+                    </h5>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m4">
+            <div class="row center">
+                <iframe width="400" height="250" src="http://www.youtube.com/embed/2KCbDWBREI4"> </iframe>
+            {% comment %}    <div class="col s12 m4">
                     <div class="card green-wine">
                         <div class="card-content white-text">
-                            <a class="btn-floating right center green-spring">
-                                1
+                            <a href="/drishti">
+                                <span class="btn-floating right center green-spring">1</span>
+                                <h5>
+                                  <span> Drishti </span>
+                                </h5>
                             </a>
-                            <h5>
-                              <a href="/drishti"> Drishti </a>
-                            </h5>
                         </div>
                         <div class="card-content white black-text"
                              style="min-height: 140px;">
-Drishti is an exhibition of a plethora of working solutions of the problem statements of previous year's UDYAM and yesteryears' AAYAM. Drishti is tailor-made to showcase the dedication of the participants. It stands as a dias for practical application of text-book knowledge. It serves as a golden opportunity to all the roads, be it the one less travelled by, or the opposite. Drishti is the window to how beautifully the participants have performed on both these roads.
                         </div>
                     </div>
                 </div>
@@ -209,7 +220,12 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
 
                         </div>
                     </div>
-                </div>
+                </div>{% endcomment %}
+            </div>
+            <div class="row">
+                <p style="font-size: 1.5em" class="roboto-300">
+It’s not just these neck-to-neck competitions that you can get at UDYAM. It’s also about the whacky novel contraptions created here that go far beyond the fest. Internships. Patents. All happens. UDYAM sets the stage free for you. Spotlight is on you. Just go with it. We promise after the three days of fest, you will leave with lot of passion to innovate and excel.
+                    </p>
             </div>
 
         </div>
@@ -360,11 +376,15 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
       </div>
     </div>
 
-{% endblock %}
 
-{% block js %}
   {{ block.super }}
-
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
+    <script src='{% static "js/scrollReveal.min.js" %}'></script>
+    <script src="{% static 'js/laurenz.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/TimeCircles.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
   <script>
     new WOW().init();
       // Global variables
@@ -635,4 +655,5 @@ Drishti is an exhibition of a plethora of working solutions of the problem state
 			width: 150px;
 		}
 		</style>
-{% endblock %}
+</body>
+</html>
