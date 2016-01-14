@@ -20,11 +20,11 @@
     <div class="green-mint"> </div>
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
-        <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="3s"></div>
-        <div id="menu_list" style="z-index:1;margin-top:0vh;position:fixed; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="2s" data-wow-duration = "1s">
+        <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="2s"></div>
+        <div id="menu_list" style="z-index:1;margin-top:0vh;position:fixed; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration = "1s">
             <ul class = "sidemenu">
                 <li class="wow bounceInUp" data-wow-delay="2s">
-                    <a href="AboutUs/index.html">
+                    <a href="#about">
                     <div class = "subbtn">
                     About&nbsp;
                     <i class = "fa fa-globe fa-2x"></i>
@@ -32,14 +32,14 @@
                     </a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.5s">
-                    <a href="Feedback/index.html">
+                    <a href="{% url 'p_static' 'events' %}">
                     <div class = "subbtn">
                     Events&nbsp;
                     <i class = "fa fa-cogs fa-2x wow fadeInUp"></i>
                     </div></a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.1s">
-                    <a href="Accommodation/index.html">
+                    <a href="{% url 'p_static' 'accommodation' %}">
                     <div class = "subbtn">
                     Accommodation&nbsp;
                     <i class = "fa fa-bed fa-2x"></i>
@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.2s">
-                    <a href="Sponsors/index.html">
+                    <a href="{% url 'p_static' 'sponsors' %}">
                     <div class = "subbtn">
                     Sponsors&nbsp;
                     <i class = "fa fa-flag-checkered fa-2x"></i>
@@ -55,14 +55,14 @@
                     </a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.3s">
-                    <a href="ReachBITS/index.html">
+                    <a href="{% url 'p_static' 'workshop' %}">
                     <div class = "subbtn">
                     Workshop&nbsp;
                     <i class = "fa fa-wrench fa-2x wow fadeInUp"></i>
                     </div></a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.4s">
-                    <a href="Team/index.html">
+                    <a href="{% url 'p_static' 'team' %}">
                     <div class = "subbtn">
                     Our Team&nbsp;
                     <i class = "fa fa-group fa-2x"></i>
@@ -168,7 +168,7 @@
             <div class="row">
                 <div class="center">
                     <img src="{% static 'img/t-satellite-hero.png' %}" style="width: 10%;">
-                    <h5 class="roboto-300">
+                    <h5 class="roboto-300" id="about">
 <b>UDYAM</b> is the annual techno-management fest of Electronics Engineering Department, IIT BHU, Varanasi. Synonymous with technical know-how and management acumen, Udyam is about practical application of classroom knowledge. With this idea of application oriented approach UDYAM started.
                     </h5>
                 </div>

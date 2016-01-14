@@ -2,33 +2,41 @@
 {% load staticfiles %}
 
 {% block title %} UDYAM-2016 | Drishti {% endblock %}
+{% block css %}
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
 
 {% block body %}
-    <section>
-         <div class="row">
-                <div class="col s12">
-                    <img class="image-title" src="{% static 'img/udyam.png' %}">
-                </div>
-            </div> <br>
-            <div class="container">
-                <div class="col s6 center white-text">
-                    <h5 class="white-text roboto-300 no-margin">
-                      Techno-Management fest, <br> Department of Electronics Engineering, IIT(BHU). <br><br>
-                    </h5>
-                    <p class="no-margin">12th - 14th Feb</p>
-                </div>
-            </div> <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col s12">
-                        <a class="btn-flat green-moss border-green white-text modal-trigger"
-                             style="width: 50%; height: 50px; line-height: 50px;" href="#register_modal" onclick="hide_menu()">
-                                REGISTER
-                        </a>
-                    </div>
+    <section id="sec-1">
+        <div class="container center">
+            <h1 class="white-text">Drishti 2016</h1>
+            <div class="pushdown-2p"></div>
+            <div class="row">
+                <div id="d_slider" class="slider">
+                    <ul class="slides">
+                        <li class="active"><img src="{% static 'img/drishti/1.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/2.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/3.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/4.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/5.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/6.jpg' %}" alt="" title="Udyam" /></li>
+                        <li><img src="{% static 'img/drishti/7.jpg' %}" alt="" title="Udyam" /></li>
+                    </ul>
+                    <ul class="indicators">
+                        <li class="indicator-item active"></li>
+                        <li class="indicator-item"></li>
+                        <li class="indicator-item"></li>
+                        <li class="indicator-item"></li>
+                        <li class="indicator-item"></li>
+                        <li class="indicator-item"></li>
+                        <li class="indicator-item"></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block js %}
 {% endblock %}
 
