@@ -3,6 +3,7 @@
 
 {% block title %} UDYAM-2016 | Drishti {% endblock %}
 {% block css %}
+    <link href="{% static 'css/my-slider.css' %}" rel="stylesheet">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
@@ -11,32 +12,28 @@
         <div class="container center">
             <h1 class="white-text">Drishti 2016</h1>
             <div class="pushdown-2p"></div>
+            <div class="row white-text">
+                <p>Drishti is an exhibition of a plethora of working solutions of the problem statements of previous year's UDYAM and yesteryears' AAYAM. Drishti is tailor-made to showcase the dedication of the participants. It stands as a dias for practical application of text-book knowledge. It serves as a golden opportunity to all the roads, be it the one less travelled by, or the opposite. Drishti is the window to how beautifully the participants have performed on both these roads.</p>
+            </div>
             <div class="row">
-                <div id="d_slider" class="slider">
-                    <ul class="slides">
-                        <li class="active"><img src="{% static 'img/drishti/1.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/2.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/3.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/4.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/5.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/6.jpg' %}" alt="" title="Udyam" /></li>
-                        <li><img src="{% static 'img/drishti/7.jpg' %}" alt="" title="Udyam" /></li>
-                    </ul>
-                    <ul class="indicators">
-                        <li class="indicator-item active"></li>
-                        <li class="indicator-item"></li>
-                        <li class="indicator-item"></li>
-                        <li class="indicator-item"></li>
-                        <li class="indicator-item"></li>
-                        <li class="indicator-item"></li>
-                        <li class="indicator-item"></li>
-                    </ul>
+                <div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-radios="false"id="my-slider">
+                  <ol>
+                    <li><img src="{% static 'img/drishti/1.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/2.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/3.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/4.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/5.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/6.jpg' %}" alt="" title="Udyam" /></li>
+                    <li><img src="{% static 'img/drishti/7.jpg' %}" alt="" title="Udyam" /></li>
+                  </ol>
                 </div>
+
             </div>
         </div>
     </section>
 {% endblock %}
 
 {% block js %}
+    <script src="{% static 'js/ism-2.1-min.js' %}"></script>
 {% endblock %}
 
