@@ -16,12 +16,12 @@ section{
     position: fixed !important;
     top: 0px !important;
     left: 0px !important;    
-    z-index: 1 !important;
+    z-index: -1 !important;
 }
 
-img {
+/*img {
     width: 100%;
-}
+}*/
 
 p {
     font-size: 1.15em;

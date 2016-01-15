@@ -1,12 +1,240 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block css %}
+	<link href='http://fonts.googleapis.com/css?family=Vollkorn|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
 
-{% block title %} UDYAM-2016 | Events {% endblock %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-{% block body %}
-    <div class="container">
-        <a class="btn-flat modal-trigger" href="#events_modal"> test</a>
-        <p>Hello</p>
-    </div>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<style>
+#events_list .fadeInUp{
+
+}
+</style>
+
 {% endblock %}
 
+
+{% block title %} Events {% endblock %}
+
+
+{% block body %}
+
+	<script src="{% static 'js/wow.min.js' %}"></script>
+              <script>
+              new WOW().init();
+              </script>
+
+    <div class="pushdown-5p"></div>
+        <a href="{% url 'home' %}" >
+            <div>
+                <img id="image" src="{% static 'img/udyam.png' %}" title="Udyam 2k16" style="width: 500px; "/><br>
+            </div>
+        </a>
+    <div class="pushdown-5p"></div>
+		<h1 style="font-size: 45px">THE<span class = "colorh1"> EVENTS</span></h1>
+
+		<div class = 'row'>
+	<br>
+	<br>
+
+		</a>
+		<main class="cd-main" id="events_list">
+		<ul class="cd-gallery">
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'mosaic' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/mosaic5.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>MOSAIC</h2>
+					</div>
+				</a>
+			</li>
+
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'i-chip' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+					<p><img src="{% static 'img/ichip.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>I-CHIP</h2>
+					</div>
+				</a>
+			</li>
+
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'continuum' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+					<p><img src="{% static 'img/continnum.jpg' %}" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" height="180vh"></p>
+						<h2>CONTINUUM</h2>
+					</div>
+				</a>
+			</li>
+
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'commnet' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+					<p><img src="{% static 'img/comnet-3.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>COMMNET</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'krypto' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/krypto.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>KRYPTO</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'code-4-2day' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/code42day.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>CODE-4-2DAY</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'digisim' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+						<p><img src="{% static 'img/digidim.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>DIGISIM</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'funckit' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+						<p><img src="{% static 'img/funckit.png' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>FUNCKIT</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'raspi' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+						<p><img src="{% static 'img/raspi.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>RASPI</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'embedtron' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/embedtron.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>EMBEDTRON</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'codedef' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/code-def.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>CODEDEF</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'muse' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/muse.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>MUSE</h2>
+					</div>
+				</a>
+			</li>
+			<li class="cd-item">
+				<a href="{% url 'p_static' 'ignite' %}">
+					<div class = "wow fadeIn" data-wow-duration="1s" data-wow-delay=".9s">
+						<p><img src="{% static 'img/bplan.jpg' %}" height="180vh" class = "wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"></p>
+						<h2>IGNITE</h2>
+					</div>
+				</a>
+			</li>
+		</ul> <!-- .cd-gallery -->
+		</main> <!-- .cd-main -->
+	<hr class = "hrthin">
+				<br><br>
+			<div style = "float:right; width:40%; text-align:right">
+			<i class = "fa fa-copyright"></i>&nbsp;Udyam 2016
+			</div>
+			<div style = "float:left; width:15%">
+				<a target="_blank" href="https://www.facebook.com/bitsquark" style="color:rgba(255,255,255,0.6); padding-left:2em;">
+				<i class= "fa fa-2x fa-facebook-f"></i>
+				</a>
+				<a target="_blank" href = "https://www.twitter.com/bitsquark" style="color:rgba(255,255,255,0.6);padding-left:2em;">
+				<i class= "fa fa-2x fa-twitter"></i>
+				</a>
+				<a target="_blank" href = "https://www.youtube.com/channel/UC7Ptc_UtcU1XRAFS-tjq7JA" style="color:rgba(255,255,255,0.6);padding-left:2em;">
+				<i class = "fa fa-2x fa-youtube-play"></i>
+				</a>
+			</div>
+	</div>
+
+
+<style type="text/css">
+	body {
+	/*background-color: #006442;*/
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	font-size: 200;
+	padding:4% 10%;
+}
+h1,.titlehead{
+	font-family: 'Raleway', sans-serif;
+	font-size: 700;
+	text-align: center;
+
+}
+
+a:hover{
+	color:#fff;
+	text-decoration: none;
+}
+
+.colorh1{
+	color: #7f8c8d;
+}
+
+.hrthin{
+	width: 40%;
+	 display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+i:hover{
+	color: rgba(255,255,255,1);
+	transition: color 0.5s;
+}
+.img{
+	border-radius: 50%;
+	border:3px solid #ddd;
+	width:130px;
+	height:130px;
+}
+</style>
+	<div class="cd-folding-panel">
+
+		<div class="fold-left"></div> <!-- this is the left fold -->
+
+		<div class="fold-right"></div> <!-- this is the right fold -->
+
+		<div class="cd-fold-content">
+			<!-- content will be loaded using javascript -->
+		</div>
+
+		<a class="cd-close" href="index.html#0"></a>
+	</div> <!-- .cd-folding-panel -->
+{% endblock %}
+{% block js%}
+<script type="text/javascript" src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
+
+{% endblock %}
