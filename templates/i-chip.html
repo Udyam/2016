@@ -1,68 +1,59 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<link rel ="stylesheet" href = "http://q16.bits-quark.org/Events/css/bootstrap.css">
-	<script type="text/javascript" src = "http://q16.bits-quark.org/Events/js/bootstrap.js"></script>
-  	
-	<title>Roboficial</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+	<title>Digisim</title>
 </head>
 <body>
-	<div class="cd-fold-content single-page">
-		<h2>Design and Build</h2>
-		<p>
-Fabricate, Delineate and Invigorate machines to compete in this test of creativity and 
-skills that will leave you gasping for air! 
+	<div class="cd-fold-content single-page" id="main_page">
+		<h2>Introduction</h2>
+<p  style=" text-align: left">Previously Sponsored by: <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mentor_Graphics_Logo.svg/1280px-Mentor_Graphics_Logo.svg.png" height="150" width="400" />
+    A VLSI event: Now there is no need to manually place gates and transistors to build electronic circuits. Describe complex circuits at an abstract level in terms of functionality and data flow by designing those circuits in HDLs. This FPGA Design Contest requires one to write the code for the given problem statement in either VHDL or Verilog and optimize it, then dump the code on the FPGA Kit to physically realize the design that was coded.
 </p>
-<em>
-Burnout: 
-</em>
-<p>
-Tune your RCs and rev your engines to witness and compete in a Nitro RC race car 
-competition. Build. Steer. Burnout!
+<h2>
+Problem Statement:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Contraption:
-</em>
-<p>
-Enthrall everyone with you are ability to perform the most simplest of actions with 
-an infinite array of steps using the simple concepts of Conservation of Energy and 
-Momentum.
+<h2>
+Event Structure:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Mortar Kombat:
-</em>
-<p>
-Aim high with your personalized Spud Guns and hit the bull's eye!
+<h2>
+Judging Criteria:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Trailblazers:
-</em>
-<p>
-Make you aircrafts fly and get high legally!  
-An events that tests maneuverability and speed of your planes.
+<h2>
+Contact Details:
+</h2>
+<p  style=" text-align: left">
+<div class="row" style="color: #302E39">
+        <div class="row">
+            <div class="col m3">Shubham Mantri</div>
+            <div class="col m6">shubham.mantri.ece13@itbhu.ac.in</div>
+            <div class="col m3">9455927695</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Arnab Mondal</div>
+            <div class="col m6">arnab.mondal.ece13@itbhu.ac.in</div>
+            <div class="col m3">9628248855</div>
+        </div>
+    </div>
 </p>
-<em>
-Crèation:
-</em>
-<p>
-A test of Creativity and your knowledge of modelling and designing is what this event 
-is all about!
-</p>
-	<a href="EventsRulebook.pdf" download>
-	<button id="down" type="button" class="btn btn-primary" style="float:right">
-		Download RuleBook
-	</button>
-	</a>
-	</div>
-
-</body>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+        </div>
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
 </body>
 </html>

@@ -1,55 +1,106 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-	<link rel ="stylesheet" href = "http://q16.bits-quark.org/Events/css/bootstrap.css">
-	<script type="text/javascript" src = "http://q16.bits-quark.org/Events/js/bootstrap.js"></script>
-  	
-	<title>Roboficial</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+	<title>Digisim</title>
 </head>
 <body>
-	<div class="cd-fold-content single-page">
-		<h2>Roboficial</h2>
-		<p>
-		Are you a Robotics fanatic? 
-Here is a platform for you to show your zeal for robotics! To prove your mettle!
+	<div class="cd-fold-content single-page" id="main_page">
+		<h2>Introduction</h2>
+<p  style=" text-align: left">Have you heard about the sixth sense technology developed by Pranav Mistry and have you ever
+thought of trying to implement a few of its basic features by yourself? If NO, then Google it silly. If
+YES, then we present you Mosaic, a platform where you are going to implement basic gesture
+recognition using image processing and machine learning techniques to design a <b>Real Time Gesture
+Controlled Image Editor </b> implementing basic functionalities like scaling, rotating, manipulating and
+saving the image.
 </p>
-<em>Robo Kombat:</em>
-<p>
-Show your robotic acumen, blend your intellect & fighter instinct and explore the 
-ideals of knighthood and their incongruity to combat armed forces opponent. 
-Unleash your technical prowess and experience the thrill of ripping, shredding and 
-destroying as the bots battle out their way to victory.
-</p>
-<em>RoboSoccer:</em>
-<p>
-Love Football ? Design a bot that can kick balls into enemy’s goal-post besides being a 
-good goalkeeper. Play and kick your way to victory.
-</p>
-<em>Line Following:</em>
-<p>
-Discover how swiftly and sharply your bot can steer through the maze.
-Follow in order to lead.
-</p>
-<em>RoboRace:</em>
-<p>
-Speed up or perish as you compete against other bots to the finish line. Feel the 
-adrenaline rush in the ultimate race against time.	
-</p>	
-	<a href="EventsRulebook.pdf" download>
-	<button id="down" type="button" class="btn btn-primary" style="float:right">
-		Download RuleBook
-	</button>
-	</a>
-	</div>
+<h2>
+Problem Statement:
+</h2>
+<p  style=" text-align: left">
+ROUND 1:<br>
+Round 1 requires the teams to work with Image Processing only. <br>
+Design a real time Pinch and Zoom function for captured images for the Image Editor. The
+participants are allowed to use coloured markers such as tapes or caps over two fingers and
+implement pinch and zoom operation. Bonus marks will be awarded to teams who
+successfully implement rotation of image too.<br><br>
+    ROUND 2:<br>
 
-</body>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+Round 2 requires the teams to implement Machine Learning in addition to Image Processing.<br>
+The teams now have to use gestures to implement more functionalities like panning,
+skewing and manipulating the contrast/brightness of the image in real time. The teams will
+have to include a mandatory gesture of “tick” which will save the image in the final frame
+into local disk. Apart from that, the teams have the freedom to use any number of gestures
+to implement more innovative functions.<br>
+The teams will be judged on the basis of the number of successful and useful functionalities
+in addition to the robustness of the code.</p>
+<h2>
+Event Structure:
+</h2>
+<p  style=" text-align: left">
+The event will be conducted in two rounds. Round one will be the qualifying round and round
+two will be final round and an extension of round one.<br>
+The participants will be judged based on the performance in both the rounds. Goodies are to be
+won after Round 1 also.<br>
+The participants are required to share any innovative techniques that they have implemented in
+their codes and there will be special marks awarded if the event coordinators are impressed.<br>
+Sufficient time will be provided to the participants for calibration to the ambient lighting but the
+participants are advised to make the code as robust as possible to avoid unnecessary wastage
+of time.<br>
+Running time of the codes of the participants will also be noted down as a mandatory criterion.<br>
+A few other criterions that have not been revealed shall be released before the event starts as
+an element of surprise.<br>
+</p>
+<h2>
+Judging Criteria:
+</h2>
+<p  style=" text-align: left">
+1. The participant must be a registered student of an educational institution.<br>
+2. Team may consist of a maximum of 3 members.<br>
+3. Participants from different educational institutions may form a team.<br>
+4. All students must bring a valid identity card of their respective institutions.<br>
+5. Every team must get ready in specified time failing which will lead to disqualification.<br>
+6. The decision of the event coordinators is final and must be abided by all.<br>
+7. Plagiarism of codes can lead to disqualification of any teams involved. Any help required can
+be sought from the event coordinators.<br>
+8. Any changes to the Problem Statement shall be highlighted on the website. Hence,
+participants are advised to visit the website regularly.<br>
+</p>
+<h2>
+Contact Details:
+</h2>
+<p  style=" text-align: left">
+<div class="row" style="color: #302E39">
+        <div class="row">
+            <div class="col m3">Piyush Soni</div>
+            <div class="col m6">piyush.soni.ece13@itbhu.ac.in</div>
+            <div class="col m3">7752957837</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Nitin Goel</div>
+            <div class="col m6">nitin.goel.ece13@itbhu.ac.in</div>
+            <div class="col m3">9454271962</div>
+        </div>
+        <div class="row">
+            <div class="col m3"> Arshiyan Alam </div>
+            <div class="col m6">8418950295</div>
+            <div class="col m3">arshiyan.alam.ece13@itbhu.ac.in</div>
+        </div><div class="row">
+            <div class="col m3"> Saloni Bhansali </div>
+            <div class="col m6">9826251501</div>
+            <div class="col m3">saloni.bhansali.ece13@itbhu.ac.in</div>
+        </div>
+    </div>
+</p>
+        </div>
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
 </body>
 </html>

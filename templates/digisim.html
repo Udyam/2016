@@ -1,66 +1,71 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title>Elixir</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+	<title>Digisim</title>
 </head>
 <body>
-	<div class="cd-fold-content single-page">
-		<h2>Elixir</h2>
-<p>
-Test of your grey matter, thrill of pillage and plunder, excitement of problem solving 
-and a trail of literary events is what this panel has in store for you.
+	<div class="cd-fold-content single-page" id="main_page">
+		<h2>Introduction</h2>
+<p  style=" text-align: left">Digisim basically stands for digital simulation.
+And digital simulation in layman terms can be expressed
+as the running of a digital system’s model. Digisim, is
+therefore a platform to explore and gain new insights into
+technology and to estimate the performance of systems
+without going into analytical solutions. Digisim is an event
+where participants have to simulate complex digital
+circuits. Participants will learn advanced circuit design and
+simulation.
 </p>
-<em>
-Quark International Quiz:
-</em>
-<p>
-The ultimate test for your grey matter!
-A National level Quizzing Competition based on Science, Technology and Business.
+<h2>
+Problem Statement:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Ganimatoonics:
-</em>
-<p>
-An amazing quiz for all the geeks interested in Games, Anime, Cartoons and Comics.
+<h2>
+Event Structure:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Edorado:
-</em>
-<p>
-Pillage and plunder the treasure online!
+<h2>
+Judging Criteria:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Numb3rs:
-</em>
-<p>
-For all those who love solving problems of mathematical nature and like to wrestle 
-with logic, Numb3rs is the event for them. This is a competition where the 
-participants will be able to test their aptitude and logical reasoning skills. 
+<h2>
+Contact Details:
+</h2>
+<p  style=" text-align: left">
+<div class="row" style="color: #302E39">
+        <div class="row">
+            <div class="col m3">Gaurav Bansal</div>
+            <div class="col m6">gaurav.bansal.ece13@itbhu.ac.in</div>
+            <div class="col m3">8085097916</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Abhiram Mishra</div>
+            <div class="col m6">abhiram.mishra.ece13@itbhu.ac.in</div>
+            <div class="col m3">8004749773</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Harshil Jain</div>
+            <div class="col m6">harshil.jain.ece13@itbhu.ac.in</div>
+            <div class="col m3">9602461388</div>
+        </div>
+    </div>
 </p>
-<em>
-Carpe Dictum:
-</em>
-<p>
-Time to put all those hours spent in English class to good use!
-A panel of literary events such as Pun Write-up, Creative Writing, Word games and
-Cryptic Crossword, Poetry Slam and Literature Quiz.
-</p>
-<a href="EventsRulebook.pdf" download>
-	<button id="down" type="button" class="btn btn-primary" style="float:right">
-		Download RuleBook
-	</button>
-</a>
-	</div>
-</div>
-</body>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+        </div>
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
 </body>
 </html>

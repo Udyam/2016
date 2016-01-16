@@ -1,61 +1,68 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title>Programmers</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+
+	<title>Digisim</title>
 </head>
 <body>
-	<div class="cd-fold-content single-page">
-		<h2>Programmer’s Inc.</h2>
-<p>So you think you can code? Here is your chance to prove it!
-Programming Events that will prove to be the litmus test for any coder.
+	<div class="cd-fold-content single-page" id="main_page">
+		<h2>Introduction</h2>
+<p  style=" text-align: left">Does hacking attract you? Do you want to know how your confidential information is kept secret from hackers? <br>If your answer is YES! Then Cryptography is the field, answers you all these questions. Cryptography is the art and science of keeping information secure from unintended audiences. Conversely, cryptanalysis is the art and science of breaking encoded data.
+                        <b>Udyam’16</b> presents you <b>Krypto</b>, an event, where you will learn how to protect your conversation safe from eavesdroppers and even how to break into secrets of others.
 </p>
-<em>
-Codejam:
-</em>
-<p>
-Do you believe not just in writing code but making it more efficient? If yes, this event 
-is for you. Rack your brains to solve puzzles and real world problems and compete 
-with people all across the nation and show off your programming skills.
+<h2>
+Problem Statement:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Hackathon:
-</em>
-<p>
-Do all you can in one night in an App and Web development contest. 
-Eat. Sleep. Code!  
+<h2>
+Event Structure:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Reverse Coding:
-</em>
-<p>
-This event involves the participant to guess the source code for a given application by 
-testing different inputs and analyzing the output.
+<h2>
+Judging Criteria:
+</h2>
+<p  style=" text-align: left">
+Will be out soon!!!
 </p>
-<em>
-Binary Pirates:
-</em>
-<p>
-A hacking competition that will test your coding skills along with your understanding 
-of networking and web related concepts. 
-<br>
-So, gear up for whacking out the hacker in you!
+<h2>
+Contact Details:
+</h2>
+<p  style=" text-align: left">
+<div class="row" style="color: #302E39">
+        <div class="row">
+            <div class="col m3">Hemant Kumar</div>
+            <div class="col m6">hemant.kumar.ece13@iitbhu.ac.in</div>
+            <div class="col m3">7752957495</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Shailesh Tripathi</div>
+            <div class="col m6">shailesh.tripathi.ece13@iitbhu.ac.in</div>
+            <div class="col m3">7754941801</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Neeraj Bansal</div>
+            <div class="col m6">neeraj.bansal.ece13@iitbhu.ac.in</div>
+            <div class="col m3">7754941621</div>
+        </div><div class="row">
+            <div class="col m3">Simran Chauhan</div>
+            <div class="col m6">simran.chauhan.ece13@iitbhu.ac.in</div>
+            <div class="col m3">7860734214</div>
+        </div>
+    </div>
 </p>
-<a href="EventsRulebook.pdf" download>
-	<button id="down" type="button" class="btn btn-primary" style="float:right">
-		Download RuleBook
-	</button>
-</a>
-	</div>
-</div>
-</body>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+        </div>
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
 </body>
 </html>
