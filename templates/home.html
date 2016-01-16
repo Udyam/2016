@@ -32,19 +32,18 @@
                     </a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.5s">
+                    <a href="{% url 'p_static' 'drishti' %}">
+                    <div class = "subbtn">
+                    Drishti&nbsp;
+                    <i class = "fa fa-eye fa-2x wow fadeInUp"></i>
+                    </div></a>
+                </li>
+                <li class="wow bounceInUp" data-wow-delay="2.5s">
                     <a href="{% url 'p_static' 'events' %}">
                     <div class = "subbtn">
                     Events&nbsp;
                     <i class = "fa fa-cogs fa-2x wow fadeInUp"></i>
                     </div></a>
-                </li>
-                <li class="wow bounceInUp" data-wow-delay="2.1s">
-                    <a href="{% url 'p_static' 'accommodation' %}">
-                    <div class = "subbtn">
-                    Accommodation&nbsp;
-                    <i class = "fa fa-bed fa-2x"></i>
-                    </div>
-                    </a>
                 </li>
                 <li class="wow bounceInUp" data-wow-delay="2.2s">
                     <a href="{% url 'p_static' 'sponsors' %}">
@@ -105,7 +104,7 @@
                 </div>
                 <div class="col m1">
                     <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
-                            style="text-align: right;"> &times;</p>
+                            style="text-align: right;"> <i class="fa fa-times-circle fa-2x"></i></p>
                 </div>
             </div>
             <div class="modal-content">
@@ -237,144 +236,12 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
     <div id="ground-inlets">
     <img class="overlay-ground-invert" src="{% static 'img/ground-green.png' %}">
     </div>
-    <section id="sec-3">
-        <div class="row">
-            <div class="pushdown-5p"></div>
-            <!-- Mini cards -->
-        <div class="container">
-
-            <div class="row">
-
-                <!-- Date -->
-                <div class="col s12 m12">
-                    <div class="card green-wine-trans border-side-white no-margin">
-                        <div class="card-content">
-                            <h2 class="roboto-200">
-                                Hospitality
-                            </h2>
-                            <hr>
-                            <p>
-                             <a href="home.html#" class="malachite-text lightbox-52774140831453"></a>
-                            </p>
-                            <hr>
-                            <p></p>
-                            <hr>
-                            <p>
-                               <b>
-                                </b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="card green-wine-trans border-side-amber no-margin">
-                        <div class="card-content">
-                            <p> Orientation & Workshops</p>
-                            <h4>
-                                Feb 14, 2016
-                            </h4>
-                            <hr class="yellow-text">
-                            <p>Events</p>
-                            <h4>March 21-22, 2016</h4>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m8" >
-                    <div class="card green-wine-trans border-side-red no-margin">
-                        <div class="card-content">
-                            <p> General Requirements </p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m4">
-                    <a class="waves-effect waves-light btn-large fullWidth amber black-text" href="contactus.html">Contact Us</a>
-                </div>
-                <div class="col s12 m4">
-                    <a class="modal-trigger waves-effect waves-light btn-large fullWidth malachite black-text" href="#sponsors">Previous year's Sponsors</a>
-                </div>
-                <div class="col s12 m4">
-                    <a class="waves-effect waves-light btn-large fullWidth indigo darken-4" href="https://www.facebook.com/#">facebook</a>
-                </div>
-            </div>
-            <div id="sponsors" class="modal">
-      <div class="modal-content">
-        <div class="row">
-                <div class="col m11">
-                    <h3 id = "form_heading" style="text-align: center;">Previous year sponsors</h3>
-                </div>
-                <div class="col m1">
-                    <p type="button" class="modal-close" data-dismiss="modal" aria-hidden="true"
-                            style="text-align: right;" onclick="show_menu()"> &times;</p>
-                </div>
-            </div>
-        <section class="sponsors"><br><br>
-            <div class="container" id="sponsors">
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mentor_Graphics_Logo.svg/1280px-Mentor_Graphics_Logo.svg.png">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="http://upload.wikimedia.org/wikipedia/en/thumb/2/22/Freescale_Semiconductor_logo.svg/1280px-Freescale_Semiconductor_logo.svg.png">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="http://500.co/uploads/logo-54b94f44fec38f0b0ca4ba6c.png">
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="http://www.vrworld.com/wp-content/uploads/2014/05/Nvidia-Logo1.png" width="300" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="https://www.hackerrank.com/assets/styleguide/logo_wordmark-vertical.png" width="300" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m6 l4">
-                      <div class="card medium">
-                        <div class="card-image">
-                          <img src="http://www.zostel.com/static/img/zostel-logo.png" width="300" />
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-      </div>
-    </div>
-        </div>
-        </div>
-    </section>
     <section id="sec-4">
         <footer class="page-footer green-wine">
             <div class="footer-copyright">
                 <div class="container center">
                     <a class="grey-text text-darken-4 center" href="home.html#!">
-                        Designed by <a href="" class="grey-text text-darken-3 ">Viyat</a>
+                        <i class="fa fa-copyright">UDYAM-2016</i>
                     </a>
                 </div>
               </div>

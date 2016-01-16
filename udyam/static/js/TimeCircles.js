@@ -75,7 +75,7 @@
         Seconds: "Minutes",
         Minutes: "Hours",
         Hours: "Days",
-        Days: "Years"
+        Days: "Months"
     };
     var secondsIn = {
         Seconds: 1,

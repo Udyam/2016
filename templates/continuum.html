@@ -1,70 +1,68 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
+	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
   	
-	<title>Hello</title>
+	<title>Continuum</title>
 </head>
 <body>
-	<div class="cd-fold-content single-page">
-		<h2>Corporate</h2>
-<p>Events designed for you to test yourself on a wide range of skills starting from 
-Finance, Management right up to Marketing and Entrepreneurship.
+	<div class="cd-fold-content single-page" id="main_page">
+		<h2>Introduction</h2>
+<p  style=" text-align: left">Have you heard about the sixth sense technology developed by Pranav Mistry and have you ever thought of trying to implement a few of its basic features by yourself? If NO, then Google it silly. If YES, then we present you Mosaic, a platform where you are going to implement basic gesture recognition using image processing and machine learning techniques..
 </p>
-<em>
-Quest:
-</em>
-<p>
-A B-Plan competition for all the young entrepreneurs out there!
-A platform like no other to pitch your idea to renowned Venture Capitalists and Angel 
-Investors and seek a chance to get that winning idea funded. 
+<h2>
+Problem Statement:
+</h2>
+<p  style=" text-align: left">
+For years, designers of industrial, medical, and other isolated systems had limited options when implementing safety isolation: the only reasonable choice was the opto-isolator.<br>
+An opto-isolator is a component that transfers electrical signals between two isolated circuits by using light.They prevent high voltages from affecting the system receiving the signal.<br>
+Today, digital isolators offer advantages in performance, size, cost, power efficiency, and integration.So the task is to simulate digital isolator.
 </p>
-<em>
-Bluechip Beatdown: 
-</em>
-<p>
-You think you can sell Ice in the arctic or a toothless comb?
-Participate and test your Marketing Skills
+<h2>
+Event Structure:
+</h2>
+<p  style=" text-align: left">
+Each team can consist of at max 2 members.<br>
+Event consists of 3 rounds:<br>
+1.) Simulation pre-event<br>
+2.) Simulation main event<br>
+3.) Quiz<br>
+There would be an on spot quiz related to the concepts covered in workshop including basic RLC circuit analysis.
 </p>
-<em>
-Intellect:
-</em>
-<p>
-A Case Study Competition where you have an opportunity to prove your Managerial 
-skills. 
+<h2>
+Judging Criteria:
+</h2>
+<p  style=" text-align: left">
+Marks distribution is as follows:<br>
+1st round - 20%<br>
+2nd round - 40%<br>
+3rd round - 40%
 </p>
-<em>
-Wallstreet Revolution:
-</em>
-<p>
-A live and exhilarating simulation of the actual stock market, crafted to mimic the 
-stock market.
+<h2>
+Contact Details:
+</h2>
+<p  style=" text-align: left">
+<div class="row" style="color: #302E39">
+        <div class="row">
+            <div class="col m3">Tanu Hari Dixit</div>
+            <div class="col m6">thari.dixit.ece13@iitbhu.ac.in</div>
+            <div class="col m3">8604625596</div>
+        </div>
+        <div class="row">
+            <div class="col m3">Bhanu Chaudhary</div>
+            <div class="col m6">bhanu.chaudhary.ece13@iitbhu.ac.in</div>
+            <div class="col m3">9454944758</div>
+        </div>
+    </div>
 </p>
-<em>
-Youth Parliament:
-</em>
-<p>
-It is a platform to put to test your leadership qualities, strategizing and decision-making
-skills, team work and your way of keeping cool at
-unfriendly situations. During the event, participants organize a parliament where
-debates, discussions and law making takes place.
-This event is only for school students
-</p>
-<a href="EventsRulebook.pdf" download>
-	<button id="down" type="button" class="btn btn-primary" style="float:right">
-		Download RuleBook
-	</button>
-	</a>
-	</div>
-
-</div>
-</body>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+        </div>
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
 </body>
 </html>
