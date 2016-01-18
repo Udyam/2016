@@ -4,7 +4,7 @@
 {% block title %} Drishti {% endblock %}
 {% block css %}
     <link href="{% static 'css/my-slider.css' %}" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block body %}
@@ -37,6 +37,20 @@
             </div>
             <div class="pushdown-2p"></div>
         </div>
+    </section>
+    <section id="sec-4">
+        <footer class="page-footer green-wine">
+            <div class="footer-copyright">
+                <div class="container center">
+                    <a class="grey-text text-darken-4 center" href="{% url 'home' %}">
+                        <i class="fa fa-copyright">UDYAM-2016</i>
+                    </a>
+                    <a target="_blank" href="https://www.facebook.com/udyamfest" style="color:rgba(255,255,255,0.6);margin-left: -50px; margin-top: 7px; float: left">
+				        <i class= "fa fa-2x fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </section>
 {% endblock %}
 
