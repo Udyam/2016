@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
 	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
 
-	<title>Codedef</title>
+	<title>Continuum</title>
 </head>
 <body>
 	<div class="cd-fold-content single-page" id="main_page">
@@ -34,13 +34,21 @@ Knowledge of basic programming is needed in every field (every branch). The comp
 Event Structure:
 </h2>
 <p  style=" text-align: left">
-Will be out soon....
+Each team can consist of at max 2 members.<br>
+Event consists of 3 rounds:<br>
+1.) Simulation pre-event<br>
+2.) Simulation main event<br>
+3.) Quiz<br>
+There would be an on spot quiz related to the concepts covered in workshop including basic RLC circuit analysis.
 </p>
 <h2>
 Judging Criteria:
 </h2>
 <p  style=" text-align: left">
-Will be out soon...
+Marks distribution is as follows:<br>
+1st round - 20%<br>
+2nd round - 40%<br>
+3rd round - 40%
 </p>
 <h2>
 Contact Details:

@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
 	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
 
-	<title>Raspi</title>
+	<title>Digisim</title>
 </head>
 <body>
 	<div class="cd-fold-content single-page" id="main_page">
@@ -58,7 +58,7 @@ Contact Details:
         </div>
         <div class="row">
             <div class="col m3">Sairam Tabibu</div>
-            <div class="col m6">t.sairam.ece13@iitbhu.ac.in</div>
+            <div class="col m6">sairam.tabibu.ece13@itbhu.ac.in</div>
             <div class="col m3">8765416191</div>
         </div>
     </div>

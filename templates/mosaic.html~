@@ -9,38 +9,36 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
 	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
 
-	<title>Mosaic</title>
+	<title>Digisim</title>
 </head>
 <body>
 	<div class="cd-fold-content single-page" id="main_page">
 		<h2>Introduction</h2>
 <p  style=" text-align: left">Have you heard about the sixth sense technology developed by Pranav Mistry and have you ever
 thought of trying to implement a few of its basic features by yourself? If NO, then Google it silly. If
-YES, then we present you Mosaic, a platform where you are going to implement basic <b>motion
-tracking & gesture recognition</b> using image processing and machine learning techniques.<br>
-You have to design a <b>Real Time Gesture Controlled Image Editor</b> implementing basic functionalities
-like scaling, rotating, manipulating and saving the image.
+YES, then we present you Mosaic, a platform where you are going to implement basic gesture
+recognition using image processing and machine learning techniques to design a <b>Real Time Gesture
+Controlled Image Editor </b> implementing basic functionalities like scaling, rotating, manipulating and
+saving the image.
 </p>
 <h2>
 Problem Statement:
 </h2>
 <p  style=" text-align: left">
-<b>ROUND 1:</b><br>
-Round 1 requires the teams to work with Image Processing only.<br>
+ROUND 1:<br>
+Round 1 requires the teams to work with Image Processing only. <br>
 Design a real time Pinch and Zoom function for captured images for the Image Editor. The
 participants are allowed to use coloured markers such as tapes or caps over two fingers and
 implement pinch and zoom operation. Bonus marks will be awarded to teams who
-successfully implement rotation of image too.<br>
-    <b>ROUND 2:</b><br>
-Round 2 requires the teams to implement basic <b>motion tracking & gesture recognition</b> using
-Machine Learning.<br>
-The teams now have to use motion gestures to implement more functionalities like panning,
+successfully implement rotation of image too.<br><br>
+    ROUND 2:<br>
+
+Round 2 requires the teams to implement Machine Learning in addition to Image Processing.<br>
+The teams now have to use gestures to implement more functionalities like panning,
 skewing and manipulating the contrast/brightness of the image in real time. The teams will
 have to include a mandatory gesture of “tick” which will save the image in the final frame
 into local disk. Apart from that, the teams have the freedom to use any number of gestures
 to implement more innovative functions.<br>
-<b>No training dataset will be provided.</b> Participants have to create their own dataset for the
-gestures they are trying to implement.<br>
 The teams will be judged on the basis of the number of successful and useful functionalities
 in addition to the robustness of the code.</p>
 <h2>
@@ -49,8 +47,8 @@ Event Structure:
 <p  style=" text-align: left">
 The event will be conducted in two rounds. Round one will be the qualifying round and round
 two will be final round and an extension of round one.<br>
-The participants will be judged based on the performance in both the rounds. <b>Goodies are to be
-won after Round 1 also.</b><br>
+The participants will be judged based on the performance in both the rounds. Goodies are to be
+won after Round 1 also.<br>
 The participants are required to share any innovative techniques that they have implemented in
 their codes and there will be special marks awarded if the event coordinators are impressed.<br>
 Sufficient time will be provided to the participants for calibration to the ambient lighting but the
