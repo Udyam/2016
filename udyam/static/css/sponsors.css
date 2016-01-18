@@ -1,0 +1,96 @@
+
+body{
+	width:100%;
+	
+	
+	margin-top:90px;
+
+}
+
+h1{
+	text-align:center;
+	color: #7f8c8d;
+
+}
+ 
+
+
+
+/*photobanner*/
+ 
+.photobanner {
+ margin: 30px 0px 80px 0px;
+ width: 6400px;
+ 
+ overflow:hidden;
+}
+.photobanner>img{
+	width:9%;
+
+}
+
+.first {
+ -webkit-animation: bannermove 20s linear infinite;
+    -moz-animation: bannermove 20s linear infinite;
+     -ms-animation: bannermove 20s linear infinite;
+      -o-animation: bannermove 20s linear infinite;
+         animation: bannermove 20s linear infinite;
+}
+ 
+@keyframes "bannermove" {
+ 0% {
+    margin-left:0px;
+ }
+ 100% {
+    margin-left: -4050px;
+ }
+ 
+}
+ 
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -4050px;
+ }
+ 
+}
+ 
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -4050px;
+ }
+ 
+}
+ 
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -4050px;
+ }
+ 
+}
+ 
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -4050px;
+ }
+ 
+}
+.hrthin{
+	width: 60%;
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    position:relative;
+}
