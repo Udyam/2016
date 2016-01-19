@@ -349,7 +349,67 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
-/**
+    $('#register_form').submit(function(){
+      var registrationData = {
+        event: $('#event_name option:selected').val(),
+        team_name: $('input[name=team_name]').val(),
+        main_contact: {
+            name: $('input[name=member1_name]').val(),
+            contact: $('input[name=member1_contact]').val(),
+            email: $('input[name=member1_email]').val()
+        },
+        team_details: []
+      };
+      var i = 1;
+      while(i<=5) {
+        registrationData.team_details.push({
+          name: $('input[name=member'+i+'_name]').val(),
+          contact: $('input[name=member'+i+'_contact]').val(),
+          email: $('input[name=member'+i+'_email]').val()
+        });
+        i++;
+      }
+      console.log(registrationData);
+      $.ajax({
+        type: 'POST',
+        url: '/',
+        data: JSON.stringify(registrationData),
+        dataType: 'json'
+      }).done(function(data) {
+        console.log(data);
+      });
+    });
+
+  });
+    $("#DateCountdown").TimeCircles({
+        "animation": "smooth",
+        "bg_width": 1,
+        "fg_width": 0.1,
+        "circle_bg_color": "#143C15",
+        "time": {
+        "Days": {
+            "text": "Days",
+            "color": "#79A685",
+            "show": true
+        },
+        "Hours": {
+            "text": "Hours",
+            "color": "#79A685",
+            "show": true
+        },
+        "Minutes": {
+            "text": "Minutes",
+            "color": "#79A685",
+            "show": true
+        },
+        "Seconds": {
+            "text": "Seconds",
+            "color": "#79A685",
+            "show": true
+        }
+        }
+        });
+      /**
  * Created by darknight on 15/1/16.
  */
 var max_members = 5;
@@ -423,66 +483,6 @@ var max_members = 5;
     function show_menu(){
         $('#menu_list').attr("class", "wow fadeInLeft");
     }
-    $('#register_form').submit(function(){
-      var registrationData = {
-        event: $('#event_name option:selected').val(),
-        team_name: $('input[name=team_name]').val(),
-        main_contact: {
-            name: $('input[name=member1_name]').val(),
-            contact: $('input[name=member1_contact]').val(),
-            email: $('input[name=member1_email]').val()
-        },
-        team_details: []
-      };
-      var i = 1;
-      while(i<=5) {
-        registrationData.team_details.push({
-          name: $('input[name=member'+i+'_name]').val(),
-          contact: $('input[name=member'+i+'_contact]').val(),
-          email: $('input[name=member'+i+'_email]').val()
-        });
-        i++;
-      }
-      console.log(registrationData);
-      $.ajax({
-        type: 'POST',
-        url: '/',
-        data: JSON.stringify(registrationData),
-        dataType: 'json'
-      }).done(function(data) {
-        console.log(data);
-      });
-    });
-
-  });
-    $("#DateCountdown").TimeCircles({
-        "animation": "smooth",
-        "bg_width": 1,
-        "fg_width": 0.1,
-        "circle_bg_color": "#143C15",
-        "time": {
-        "Days": {
-            "text": "Days",
-            "color": "#79A685",
-            "show": true
-        },
-        "Hours": {
-            "text": "Hours",
-            "color": "#79A685",
-            "show": true
-        },
-        "Minutes": {
-            "text": "Minutes",
-            "color": "#79A685",
-            "show": true
-        },
-        "Seconds": {
-            "text": "Seconds",
-            "color": "#79A685",
-            "show": true
-        }
-        }
-        });
   </script>
 </body>
 </html>
