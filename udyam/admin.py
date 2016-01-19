@@ -4,4 +4,9 @@ from models import RegistrationInfo
 
 # Register your models here.
 
-admin.site.register(RegistrationInfo)
+
+class RegisterAdmin(admin.ModelAdmin):
+    model = RegistrationInfo
+    list_filter = ['event_name']
+
+admin.site.register(RegistrationInfo,RegisterAdmin)
