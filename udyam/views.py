@@ -2,7 +2,7 @@ from django.shortcuts import render
 from models import RegistrationInfo
 from django.views.decorators.csrf import csrf_exempt
 import json
-# Create your views here.
+
 
 @csrf_exempt
 def index(request):
@@ -15,8 +15,12 @@ def index(request):
             team.team_name = form_detail[u'team_name']
             team.team_details = form_detail[u'team_details']
             team.save()
+            return render(request, 'home.html', done=True)
+
         except:
             pass
+            return render(request, 'home.html', done=False)
+
     return render(request, 'home.html')
 
 
