@@ -637,11 +637,7 @@ core-menu > paper-item.core-selected {
     padding-top: 2px;
 }
 
-#sponsors_card .card-image{
-    height : 100px;
-
-}
 .card_size{
-    height : 200px;
+    height : 250px;
     background-color: #349f6a;
 }

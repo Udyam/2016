@@ -28,24 +28,19 @@ h1{
   
   width:2550px;
   margin-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 10px;
   height:230px;
 /* width: 6400px; */
 
-background-color: white;
+background-color: #b3ffad;
  
  overflow:hidden;
 }
 .photobanner>img{
 	width:250px;
   padding-right: 10px;
-  padding-bottom:10px;
+  padding-bottom:30px;
   padding-top: 20px;
-  
-
- 
-
-
 }
 
 .first {
