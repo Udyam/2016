@@ -149,7 +149,7 @@
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
         <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="2s"></div>
-        <div id="menu_list" style="z-index:1;margin-top:0vh;position:fixed; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration = "1s">
+        <div id="menu_list" style="z-index:1;margin-top:0vh;position:absolute; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration = "1s">
             <ul class = "sidemenu">
                 <li class="wow bounceInUp" data-wow-delay="2s">
                     <a href="#about">
@@ -275,7 +275,7 @@
                             Name: <input type="text" name="member1_name" required>&emsp;&emsp;
                             Contact Number: <input type="text" name="member1_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp;
                             Email: <input type="email" name="member1_email" required>&emsp;&emsp;
-                            <a class="btn fa fa-plus fa-2x" onclick="add_member()">
+                            <a class="btn btn1 fa fa-plus fa-2x" onclick="add_member()">
                                 <!-- If changed the tag of button... do change it in remove member functon-->
                             </a>
                         </fieldset>
@@ -453,7 +453,7 @@ var max_members = 5;
                             Name: <input type="text" name="member'+counter+'_name" required>&emsp;&emsp;\
                             Contact Number: <input type="text" name="member'+counter+'_contact" pattern="^[1-9][0-9]{9}$" required>&emsp;&emsp; \
                             Email: <input type="email" name="member'+counter+'_email" required>&emsp;&emsp;\
-                            <a class="btn fa fa-remove fa-2x" \
+                            <a class="btn btn2 fa fa-remove fa-2x" \
                                 onclick="remove_member(' + "'m"+counter+"_field'"+')"> \
                             </a>\
                         </fieldset>';

@@ -628,3 +628,20 @@ core-menu > paper-item.core-selected {
     margin-top: 15px;
     text-align: center;
 }
+
+.btn1{
+    padding-top: 4px;
+}
+
+.btn2{
+    padding-top: 2px;
+}
+
+#sponsors_card .card-image{
+    height : 100px;
+
+}
+.card_size{
+    height : 200px;
+    background-color: #349f6a;
+}
