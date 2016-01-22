@@ -641,3 +641,8 @@ core-menu > paper-item.core-selected {
     height : 250px;
     background-color: #349f6a;
 }
+
+a .fa-facebook-f:hover {
+    color: #3B5998;
+    transition: color 0.4s;
+}

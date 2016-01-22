@@ -18,7 +18,7 @@ html_head = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" '
 html_head +='"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">'
 html_head += '<meta charset ="UTF-8">'
 html_head += '<meta name="author" content ="Amit Gupta">'
-html_head +='<body style="font-size:12px;font-family:Verdana">'
+html_head +='<body style="font-size:14px;font-family:Verdana">'
 
 participant_mail_body = """
 <p>
