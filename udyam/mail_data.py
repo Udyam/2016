@@ -1,5 +1,5 @@
 events_data = {
-    'code42day': ('CODE-4-2DAY', 'amit.gupta24janiit@gmail.com'),
+    'code42day': ('CODE-4-2DAY', 'lehar.jain.ece13@iitbhu.ac.in'),
     'codedef': ('CODEDEF', 'apoorv.agarwal.ece13@itbhu.ac.in'),
     'continnum': ('CONTINNUM','bhanu.chaudhary.ece13@iitbhu.ac.in'),
     'commnet': ('COMMNET', 'cnaimesh.maddula.ece13@iitbhu.ac.in'),

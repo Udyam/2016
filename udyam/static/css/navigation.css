@@ -1,0 +1,40 @@
+
+.color nav{
+	/* background-color: rgb(20, 70, 0); */
+	 background: red; /* For browsers that do not support gradients */
+	 background: -webkit-linear-gradient(rgb(20, 50, 0), rgb(10,150,0),rgb(20, 50, 0)); /* For Safari 5.1 to 6.0 */
+	 background: -o-linear-gradient(rgb(20, 50, 0), rgb(10,150,0),rgb(20, 70, 0)); /* For Opera 11.1 to 12.0 */
+	 background: -moz-linear-gradient(rgb(20, 50, 0), rgb(10,150,0),rgb(20, 50, 0)); /* For Firefox 3.6 to 15 */
+	 background: linear-gradient(rgb(20, 50, 0),rgb(10,150,0),rgb(20, 50, 0)); /* Standard syntax */
+	 height: 80px;
+	 position: relative;
+}
+.color nav ul li:hover{
+	background-color:rgb(0, 30, 0);
+
+}
+.color nav ul{
+	margin-right:30px;
+	margin: auto 0px;
+}
+.color nav ul li{
+	padding-right:10px;
+	padding-left: 10px;
+
+}
+.color nav ul li a{
+	font-size: 20px;
+	
+}
+.brand-logo{
+	width:15%;
+}
+.brand-logo img{
+	width:100%;
+	margin-top:25px;
+	margin-left: 0px;
+
+}
+.current{
+	background-color:rgb(0, 30, 0);
+}

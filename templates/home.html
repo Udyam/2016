@@ -66,17 +66,6 @@
     <div class="green-mint"> </div>
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
-        {% if msg %}
-            <div style="background-color:#fff8e1" id="error_msg">
-                {% if error %}
-                    <p style="color: limegreen; float: left">You have been successfully registered with us.</p>
-                {% else %}
-                    <p style="color: red; float: left">This team name has already been taken.</p>
-                {% endif %}
-                <p type="button" aria-hidden="true"
-                            style="text-align: right;" onclick="hide_menu('error_msg')"> <i class="fa fa-times-close fa-2x"></i></p>
-            </div>
-        {% endif %}
         <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="1.5s"></div>
         <div id="menu_list" style="z-index:1;margin-top:0vh;position:absolute; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration = "1s">
             <ul class = "sidemenu">
@@ -305,6 +294,13 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
         url: '/',
         data: JSON.stringify(registrationData),
         dataType: 'json'
+      }).done(function(data){
+          if(data.error){
+              alert("The team with this team name has already registered with us");
+          }
+          else{
+              alert("Your team registration is successful.")
+          }
       });
         return false;
     });
