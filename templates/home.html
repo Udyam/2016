@@ -66,6 +66,17 @@
     <div class="green-mint"> </div>
     <!-- Landing Section -->
     <section id="sec-1" class="no-padding">
+        {% if msg %}
+            <div style="background-color:#fff8e1" id="error_msg">
+                {% if error %}
+                    <p style="color: limegreen; float: left">You have been successfully registered with us.</p>
+                {% else %}
+                    <p style="color: red; float: left">This team name has already been taken.</p>
+                {% endif %}
+                <p type="button" aria-hidden="true"
+                            style="text-align: right;" onclick="hide_menu('error_msg')"> <i class="fa fa-times-close fa-2x"></i></p>
+            </div>
+        {% endif %}
         <div id="DateCountdown" data-date="2016-02-12 00:00:00" style="width: 40%;z-index:1;margin:0 auto" class="wow flipInX" data-wow-delay="1.5s"></div>
         <div id="menu_list" style="z-index:1;margin-top:0vh;position:absolute; margin-left:0;float:left;width:20%;text-align:right" class="wow fadeInLeft" data-wow-delay="1s" data-wow-duration = "1s">
             <ul class = "sidemenu">
@@ -267,7 +278,9 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
-    $('#register_form').submit(function(){
+    $('#register_form').on('submit',function(e){
+        e.preventDefault();
+        $('#register_modal').hide();
       var registrationData = {
         event: $('#event_name option:selected').val(),
         team_name: $('input[name=team_name]').val(),
@@ -287,15 +300,13 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
         });
         i++;
       }
-      console.log(registrationData);
       $.ajax({
         type: 'POST',
         url: '/',
         data: JSON.stringify(registrationData),
         dataType: 'json'
-      }).done(function(data) {
-        console.log(data);
       });
+        return false;
     });
 
   });
@@ -394,12 +405,8 @@ var max_members = 5;
         counter--;
     }
 
-    function hide_menu(){
-        $('#menu_list').attr("class", "hide");
-    }
-
-    function show_menu(){
-        $('#menu_list').attr("class", "wow fadeInLeft");
+    function hide_menu(id){
+        $('#'+id).attr("class", "hide");
     }
   </script>
 </body>

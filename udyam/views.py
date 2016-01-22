@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from models import RegistrationInfo
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -7,7 +7,10 @@ import thread
 
 @csrf_exempt
 def index(request):
-    if request.is_ajax():
+    msg = False
+    error = False
+    if request.method == 'POST':
+        msg = True
         try:
             form_detail = json.loads(request.body)
             team = RegistrationInfo()
@@ -22,8 +25,8 @@ def index(request):
             # thread.start_new_thread(mail.mail_coordinator, ())
             # thread.start_new_thread(mail.mail_representative, ())
         except:
-            pass
-    return render(request, 'home.html')
+            error = True
+    return render(request, 'home.html', {'msg': msg, 'error': error})
 
 
 def static_page(request, page):
