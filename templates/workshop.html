@@ -31,14 +31,23 @@
               <script>
               new WOW().init();
               </script>
-
-    <div class="pushdown-5p"></div>
-        <a href="{% url 'home' %}" >
-            <div>
-                <img id="image" src="{% static 'img/udyam.png' %}" title="Udyam 2k16" style="width: 500px; "/><br>
+    <div class="navbar-fixed color">
+        <nav>
+            <div class="nav-wrapper">
+              <div class="brand-logo"><a href="#"><img src="{% static 'img/udyam.png' %}"></a></div>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{% url 'p_static' 'team' %}">Our Team</a></li>
+                <li><a href="{% url 'p_static' 'sponsors' %}">Sponsors</a></li>
+                <li class="current"> Workshop</li>
+                <li><a href="{% url 'p_static' 'events' %}">Events</a></li>
+                <li><a href="{% url 'p_static' 'drishti' %}">Drishti</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+              </ul>
             </div>
-        </a>
+        </nav>
+    </div>
     <div class="pushdown-5p"></div>
+    <div class="pushdown-2p"></div>
 		<h1 style="font-size: 45px">WORKSHOP<span class = "colorh1"> DETAILS</span></h1>
 
 		<div class = 'row'>

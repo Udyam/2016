@@ -7,20 +7,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock %}
 {% block body %}
-    <section id="sec-1" class="no-padding">
-        <div class="pushdown-5p"></div>
-        <a href="{% url 'home' %}" >
-            <div class="container center">
-                <img id="ital" src="{% static 'img/udyam.png' %}" title="Udyam 2k16" style="width: 500px"/><br>
+     <div class="navbar-fixed color">
+        <nav>
+            <div class="nav-wrapper">
+              <div class="brand-logo"><a href="#"><img src="{% static 'img/udyam.png' %}"></a></div>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="current">Our Team</li>
+                <li><a href="{% url 'p_static' 'sponsors' %}">Sponsors</a></li>
+                <li><a href="{% url 'p_static' 'workshop' %}">Workshop</a></li>
+                <li><a href="{% url 'p_static' 'events' %}">Events</a></li>
+                <li><a href="{% url 'p_static' 'drishti' %}">Drishti</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+              </ul>
             </div>
-        </a>
+        </nav>
+    </div>
+    <section id="sec-1" class="no-padding">
         <div class="container center">
+            <div class="pushdown-10p"></div>
             <div class="pushdown-5p"></div>
                     <div class="white-text">
                         <h1>Our <span style="color:#888888;">Team</span></h1>
                         <h5>The people who make it happen</h5>
                     </div>
         </div>
+                    <div class="pushdown-5p"></div>
         <div style="z-index:1;margin-top:10vh;text-align:center;clear:both">
             <ul class = "bottommenu" style = "display:inline-block">
                 <li>
