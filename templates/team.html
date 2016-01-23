@@ -218,6 +218,21 @@
             </div>
         </div>
     </section>
+    <section id="sec-4">
+        <footer class="page-footer green-wine">
+            <div class="footer-copyright">
+                <div class="container center">
+                    <a class="grey-text text-darken-4 center" href="{% url 'home' %}">
+                        <i class="fa fa-copyright">UDYAM-2016</i>
+                    </a>
+                    <a target="_blank" href="https://www.facebook.com/udyamfest" style="color:rgba(255,255,255,0.6);margin-left: -50px; margin-top: 7px; float: left">
+				        <i class= "fa fa-2x fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
 {% endblock %}
 
 {% block js%}
@@ -228,27 +243,6 @@
 			color: #3B5998;
 			transition: color 0.4s;
 		}
-		a .fa-twitter:hover{
-			color: #00aced;
-			transition: color 0.4s;
-		}
-		a .fa-youtube-play:hover{
-			color: #bb0000;
-			transition: color 0.4s;
-		}
-
-		/*@media only screen and (max-width: 500px){
-			#backvideo,#demo-canvas {
-				display: none;
-			}
-		}*/
-
-
-		/*@media only screen and (max-device-aspect-ratio: 82/50){
-			#backvideo, #demo-canvas {
-				display: none;
-			}
-		}*/
 		.mainbtn{
 			color : rgba(255,255,255,0.5);
 			transition: color 0.7s;
@@ -277,9 +271,6 @@
 
 
 		}
-
-
-
 		.mainbtn .textbtn{
 			color : rgba(255,255,255,0.5);
 			transition: color 0.7s;
@@ -332,17 +323,6 @@
     transition: transform 0.3s 0.1s;
 
 
-		}
-
-		.sidemenu{
-			list-style-type: none;
-		}
-		.sidemenu i {
-			width: 20%;
-		}
-		.sidemenu li {
-			padding: 10px;
-			display:block;
 		}
 		.bottommenu li {
 			display: inline-block;
