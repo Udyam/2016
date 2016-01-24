@@ -19,8 +19,8 @@ class SendMail:
         message.set_subject(_subject)
         message.set_html(_body)
         message.set_from('Team UDYAM<no-reply@udyam.com>')
-        status, msg = sg_client.send(message)
-        print status + " " + msg
+        sg_client.send(message)
+
 
     def mail_coordinator(self):
         sg_client = sendgrid.SendGridClient(self.APIKEY)
