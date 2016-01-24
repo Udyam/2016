@@ -190,6 +190,7 @@
                             <input type="text" name="team_name" class="form-control" required>
                         </div>
                     </div>
+                    <p style="font-size: smaller">** Each team will have a team representative. Please click on (+) button to add your team members.</p>
                     <div class="form-group">
                         <fieldset id="tr_field">
                             <legend>Team Representative:</legend>
@@ -342,7 +343,7 @@ It’s not just these neck-to-neck competitions that you can get at UDYAM. It’
  */
 var max_members = 5;
       var counter = 1;
-      var events = {"" : 5,
+      var events = {"" : 0,
                     "code42day" :"4",
                     "codedef" :"1",
                     "continnum" :"2",
@@ -369,6 +370,10 @@ var max_members = 5;
       });
     function add_member(){
         //dynamically adds a member to the team
+        if(parseInt(events[$('#event_name option:selected').val()]) == 0){
+            alert("Please choose your event first.");
+            return;
+        }
         if(counter >= max_members){
             alert("Maximum "+max_members+" is/are allowed in "+$('#event_name option:selected').text()+" event");
         }
