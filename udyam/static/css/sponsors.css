@@ -125,3 +125,7 @@ background-color: #b3ffad;
     border-top: 1px solid #ccc;
     
 }
+
+.card {
+    background: transparent;
+}
