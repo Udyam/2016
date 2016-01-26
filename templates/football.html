@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'css/football.css' %}">
+{% endblock %}
+
+{% block body %}
+	<div id="big_wrapper">
+		<h1>ELECTRONICS ENGINEERING SOCIETY</h1><br>
+		<h3>FOOTBALL</h3>
+		<br><br><br>
+		<div id="options">
+			<ul>
+				<li id="league_points_table"><h4>League Points Table</h4></li>
+					<div id="league_table">
+						<table id="points_table">
+							<tr>
+								<th><h5><b>Team</b></h5></th>
+								<th><h5><b>Played</b></h5></th>
+								<th><h5><b>Won</b></h5></th>
+								<th><h5><b>Lost</b></h5></th>
+								<th><h5><b>Draw</b></h5></th>
+								<th><h5><b>Goal Difference</b></h5></th>
+								<th><h5><b>Points</b></h5></th>
+							</tr>
+							<tr>
+								<td><h6>II<sup>nd</sup> Year</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>+1</h6></td>
+								<td><h6>3</h6></td>
+							</tr>
+							<tr>
+								<td><h6>I<sup>st</sup> Year</h6></td>
+								<td><h6>2</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>+1</h6></td>
+								<td><h6>3</h6></td>
+							</tr>
+							<tr>
+								<td><h6>III<sup>rd</sup> Year</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+							</tr>
+							<tr>
+								<td><h6>IV<sup>th</sup> Year (A)</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>0</h6></td>
+							</tr>
+							<tr>
+								<td><h6>IV<sup>th</sup> Year (B)</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>1</h6></td>
+								<td><h6>0</h6></td>
+								<td><h6>-2</h6></td>
+								<td><h6>0</h6></td>
+							</tr>
+						</table>
+
+
+					</div>
+
+				<li id="top_scorers"><h4>Top Scorers</h4></li>
+				<div id="goalscorer">
+					<table id="scorers">
+						<tr>
+							<th><h5><b>Name</b></h5></th>
+							<th><h5><b>Year</b></h5></th>
+							<th><h5><b>Total Goals</b></h5></th>
+						</tr>	
+						<tr>
+							<td><h6>Vikram</h6></td>
+							<td><h6>I<sup>st</sup></h6></td>
+							<td><h6>2</h6></td>
+						</tr>
+                        <tr>
+							<td><h6>Rahul Yadav</h6></td>
+							<td><h6>II<sup>nd</sup></h6></td>
+							<td><h6>1</h6></td>
+						</tr>
+						<tr>
+							<td><h6>Triptesh Mallick</h6></td>
+							<td><h6>II<sup>nd</sup></h6></td>
+							<td><h6>1</h6></td>
+						</tr>
+                        <tr>
+							<td><h6>Sachin</h6></td>
+							<td><h6>I<sup>st</sup></h6></td>
+							<td><h6>1</h6></td>
+						</tr>
+					</table>	
+
+				</div>
+				<li id="match_results"><h4>Match Results</h4></li>
+					<div id="results">
+						<table id="score">
+							<tr>
+								<td><h6>II<sup>nd</sup> Year</h6></td>
+								<td><h6><b>2</b></h6></td>
+								<td style="padding-right:5px;padding-left:5px;"><h6>VS</h6></td>
+								<td><h6><b>1</b></h6></td>
+								<td><h6>I<sup>st</sup> Year</h6></td>
+								<td><h6>23<sup>rd</sup> Jan 2016</h6></td>
+							</tr>
+							<tr>
+								<td><h6>IV<sup>th</sup> Year (B)</h6></td>
+								<td><h6><b>0</b></h6></td>
+								<td class="less_padding"><h6>VS</h6></td>
+								<td><h6><b>2</b></h6></td>
+								<td><h6>I<sup>st</sup> Year</h6></td>
+								<td><h6>26<sup>rd</sup> Jan 2016</h6></td>
+							</tr>
+						</table>
+					</div>	
+			</ul>	
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block js %}
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/football.js' %}"></script>
+{% endblock %}
