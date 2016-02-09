@@ -21,24 +21,43 @@
 Problem Statement:
 </h2>
 <p  style=" text-align: left">
-Participants have to detect edges in any given image.<br>
-An image will be provided in the form of a text file and the participants have to output a text file which represents an image with only the edges left from the original image.<br>
-Any HDL(VHDL/Verilog) can be used.<br>
-RTL design must be synthesizable and should be targeted for FPGA technology virtex7.<br>
+<b>Edge and corner detection in a greyscale image.</b><br>
+<b>Simulation  (Use of MODELSIM is compulsory):-</b><br>
+Participants have to detect edges and coordinates of the corners in any given greyscale image.<br>
+An image will be provided in the form of a text file with the 2
+bit hexadecimal value of each pixel (row wise) and the
+participants have to output a text file(with binary values
+representing the black and white image) which represents an
+image with only the edges left from the original image.<br>
+Also output the coordinates of the corners.<br>
+<b>Synthesis :-</b>   Particpants have to output the coordinates of
+the corners on a 7 segment display. An image will be provided
+in the form of a .coe file with the hexadecimal value of each
+pixel (row wise) and the participants have to output the
+coordinates of the corners on a 7 segment display at the
+press of a button.<br>
+    Any HDL(VHDL/Verilog) can be used.
+RTL design must be synthesizable and should be targeted for
+FPGA technology Spartan3 (XC3S400).<br>
 Pipelined designs are recommended.<br>
 </p>
 <h2>
 Event Structure:
 </h2>
 <p  style=" text-align: left">
-Will be out soon!!!
+Edge and corner detection in a greyscale image.<br>
+There are 2 parts<br>
+1)  Simulation<br>
+2)  Synthesis<br>
 </p>
 <h2>
 Judging Criteria:
 </h2>
 <p  style=" text-align: left">
+    Accuracy.<br>
+    Run time (frequency of operation and latency).<br>
+    Resources used in the FPGA.<br>
 The design must cover all aspects of problem statement and shows correct simulation for all test cases.<br>
-Winning criterion is based on QofR (quality of result both in context of accuracy and run time performance).
 </p>
 <h2>
 Contact Details:
