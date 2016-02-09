@@ -3,6 +3,7 @@ events_data = {
     'codedef': ('CODEDEF', 'apoorv.agarwal.ece13@itbhu.ac.in'),
     'continnum': ('CONTINNUM','bhanu.chaudhary.ece13@iitbhu.ac.in'),
     'commnet': ('COMMNET', 'cnaimesh.maddula.ece13@iitbhu.ac.in'),
+    'ctf': ('CTF', 'ayush.singh.ece13@iitbhu.ac.in'),
     'digisim': ('DIGISIM', 'harshil.jain.ece13@itbhu.ac.in'),
     'embedtron': ('EMBEDTRON', 'anesh.jain.ece13@itbhu.ac.in'),
     'funckit': ('FUNCKIT', 'anushka.verma.ece13@itbhu.ac.in'),
