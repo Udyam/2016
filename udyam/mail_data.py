@@ -5,7 +5,6 @@ events_data = {
     'commnet': ('COMMNET', 'cnaimesh.maddula.ece13@iitbhu.ac.in'),
     'ctf': ('CTF', 'ayush.singh.ece13@iitbhu.ac.in'),
     'digisim': ('DIGISIM', 'harshil.jain.ece13@itbhu.ac.in'),
-    'embedtron': ('EMBEDTRON', 'anesh.jain.ece13@itbhu.ac.in'),
     'funckit': ('FUNCKIT', 'anushka.verma.ece13@itbhu.ac.in'),
     'ichip': ('I-CHIP', 'arnabkr.mondal.ece13@itbhu.ac.in'),
     'krypto': ('KRYPTO', 'shailesh.tripathi.ece13@iitbhu.ac.in'),
