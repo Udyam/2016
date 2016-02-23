@@ -31,8 +31,119 @@ Problem Statement:
 Fascinated by contemporary processors like i7, i5 ,i3 etc. and want to explore their internal architecture ??<br>
 If yes , then Digisim is the event for you.<br>
     <b>Participants will implement a subset of MIPS architecture (8 bit) with limited number of instructions in proteus.<br>
-MIPS(Microprocessor Without Interlocked Pipeline Stage) is a reduced instruction set computer architecture primarily used in embedded systems such as routers , video games like PSP, PS2 etc.</b>
-</p>
+MIPS(Microprocessor Without Interlocked Pipeline Stage) is a reduced instruction set computer architecture primarily used in embedded systems such as routers , video games like PSP, PS2 etc.</b><br><br>
+<b>Instruction set is as follows</b><br></p>
+<p align="center"><b> I Type instruction</b></p>
+<div style="color: black">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Op-code</th>
+                <th>R<sub>s</sub></th>
+                <th>D<sub>s</sub></th>
+                <th>Imm. Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Beq r<sub>1</sub>, r<sub>3</sub>, immediate</td>
+                <td>0010</td>
+                <td>001</td>
+                <td>011</td>
+                <td>immediate</td>
+            </tr>
+            <tr>
+                <td>Addi r<sub>3</sub>, r<sub>4</sub>, immediate</td>
+                <td>0001</td>
+                <td>100</td>
+                <td>011</td>
+                <td>immediate</td>
+            </tr>
+            <tr>
+                <td>Bneq r<sub>1</sub>, r<sub>4</sub>, immediate</td>
+                <td>0011</td>
+                <td>001</td>
+                <td>100</td>
+                <td>immediate</td>
+            </tr><tr>
+                <td>Sw im(r<sub>2</sub>), r<sub>1</sub>, immediate</td>
+                <td>0100</td>
+                <td>010</td>
+                <td>001</td>
+                <td>immediate</td>
+            </tr><tr>
+                <td>lw r<sub>1</sub>, im(r<sub>2</sub>), immediate</td>
+                <td>0101</td>
+                <td>010</td>
+                <td>001</td>
+                <td>immediate</td>
+            </tr>
+        </tbody>
+    </table>
+</div><p align="center"><b> R Type instruction</b></p>
+<div style="color: black">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Command</th>
+                <th>Op-code</th>
+                <th>R<sub>s1</sub></th>
+                <th>R<sub>s2</sub></th>
+                <th>D<sub>s</sub></th>
+                <th>Func-code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sub r<sub>1</sub>, r<sub>4</sub>, r<sub>5</sub></td>
+                <td>0000</td>
+                <td>100</td>
+                <td>101</td>
+                <td>001</td>
+                <td>001</td>
+            </tr>
+            <tr>
+                <td>Add r<sub>1</sub>, r<sub>3</sub>, r<sub>6</sub></td>
+                <td>0000</td>
+                <td>011</td>
+                <td>110</td>
+                <td>001</td>
+                <td>010</td>
+            </tr>
+            <tr>
+                <td>Or r<sub>1</sub>, r<sub>4</sub>, r<sub>5</sub></td>
+                <td>0000</td>
+                <td>101</td>
+                <td>111</td>
+                <td>010</td>
+                <td>011</td>
+            </tr><tr>
+                <td>Slt r<sub>1</sub>, r<sub>4</sub>, r<sub>5</sub></td>
+                <td>0000</td>
+                <td>010</td>
+                <td>011</td>
+                <td>001</td>
+                <td>101</td>
+            </tr><tr>
+                <td>Xor r<sub>1</sub>, r<sub>4</sub>, r<sub>5</sub></td>
+                <td>0000</td>
+                <td>110</td>
+                <td>100</td>
+                <td>101</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+</div><p align="center"><b> J Type instruction</b></p>
+     <table class="table" style="color: black">
+        <thead>
+            <tr>
+                <th>OP CODE (1111) 4 BITS</th>
+                <th>JUMP VALUE</th>
+            </tr>
+        </thead>
+         </table>
 <h2>
 Event Structure:
 </h2>
