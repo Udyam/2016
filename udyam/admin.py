@@ -8,7 +8,6 @@ class ParticipantResource(resources.ModelResource):
 
     class Meta:
         model = models.RegistrationInfo
-        fields = ('team_name', 'contact')
 
 class ParticipantAdmin(ImportExportModelAdmin):
     resource_class = ParticipantResource
